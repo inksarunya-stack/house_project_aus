@@ -1,0 +1,1651 @@
+Suburb,Quarter,QuarterDate,WeeklyRent
+Altona,Mar 2020,2020-03-01,400
+Altona,Jun 2020,2020-06-01,400
+Altona,Sep 2020,2020-09-01,400
+Altona,Dec 2020,2020-12-01,400
+Altona,Mar 2021,2021-03-01,400
+Altona,Jun 2021,2021-06-01,400
+Altona,Sep 2021,2021-09-01,400
+Altona,Dec 2021,2021-12-01,400
+Altona,Mar 2022,2022-03-01,400
+Altona,Jun 2022,2022-06-01,400
+Altona,Sep 2022,2022-09-01,415
+Altona,Dec 2022,2022-12-01,420
+Altona,Mar 2023,2023-03-01,430
+Altona,Jun 2023,2023-06-01,450
+Altona,Sep 2023,2023-09-01,470
+Altona,Dec 2023,2023-12-01,490
+Altona,Mar 2024,2024-03-01,510
+Altona,Jun 2024,2024-06-01,530
+Altona,Sep 2024,2024-09-01,550
+Altona,Dec 2024,2024-12-01,550
+Altona,Mar 2025,2025-03-01,550
+Altona,Jun 2025,2025-06-01,550
+Armadale,Mar 2020,2020-03-01,500
+Armadale,Jun 2020,2020-06-01,500
+Armadale,Sep 2020,2020-09-01,500
+Armadale,Dec 2020,2020-12-01,495
+Armadale,Mar 2021,2021-03-01,450
+Armadale,Jun 2021,2021-06-01,440
+Armadale,Sep 2021,2021-09-01,425
+Armadale,Dec 2021,2021-12-01,420
+Armadale,Mar 2022,2022-03-01,430
+Armadale,Jun 2022,2022-06-01,450
+Armadale,Sep 2022,2022-09-01,450
+Armadale,Dec 2022,2022-12-01,460
+Armadale,Mar 2023,2023-03-01,490
+Armadale,Jun 2023,2023-06-01,500
+Armadale,Sep 2023,2023-09-01,525
+Armadale,Dec 2023,2023-12-01,560
+Armadale,Mar 2024,2024-03-01,560
+Armadale,Jun 2024,2024-06-01,583
+Armadale,Sep 2024,2024-09-01,600
+Armadale,Dec 2024,2024-12-01,600
+Armadale,Mar 2025,2025-03-01,625
+Armadale,Jun 2025,2025-06-01,620
+Bairnsdale,Mar 2020,2020-03-01,310
+Bairnsdale,Jun 2020,2020-06-01,300
+Bairnsdale,Sep 2020,2020-09-01,300
+Bairnsdale,Dec 2020,2020-12-01,310
+Bairnsdale,Mar 2021,2021-03-01,320
+Bairnsdale,Jun 2021,2021-06-01,330
+Bairnsdale,Sep 2021,2021-09-01,340
+Bairnsdale,Dec 2021,2021-12-01,350
+Bairnsdale,Mar 2022,2022-03-01,360
+Bairnsdale,Jun 2022,2022-06-01,370
+Bairnsdale,Sep 2022,2022-09-01,380
+Bairnsdale,Dec 2022,2022-12-01,400
+Bairnsdale,Mar 2023,2023-03-01,400
+Bairnsdale,Jun 2023,2023-06-01,410
+Bairnsdale,Sep 2023,2023-09-01,410
+Bairnsdale,Dec 2023,2023-12-01,420
+Bairnsdale,Mar 2024,2024-03-01,420
+Bairnsdale,Jun 2024,2024-06-01,425
+Bairnsdale,Sep 2024,2024-09-01,430
+Bairnsdale,Dec 2024,2024-12-01,450
+Bairnsdale,Mar 2025,2025-03-01,450
+Bairnsdale,Jun 2025,2025-06-01,460
+Balwyn,Mar 2020,2020-03-01,550
+Balwyn,Jun 2020,2020-06-01,550
+Balwyn,Sep 2020,2020-09-01,560
+Balwyn,Dec 2020,2020-12-01,550
+Balwyn,Mar 2021,2021-03-01,540
+Balwyn,Jun 2021,2021-06-01,520
+Balwyn,Sep 2021,2021-09-01,520
+Balwyn,Dec 2021,2021-12-01,530
+Balwyn,Mar 2022,2022-03-01,530
+Balwyn,Jun 2022,2022-06-01,550
+Balwyn,Sep 2022,2022-09-01,550
+Balwyn,Dec 2022,2022-12-01,550
+Balwyn,Mar 2023,2023-03-01,575
+Balwyn,Jun 2023,2023-06-01,610
+Balwyn,Sep 2023,2023-09-01,635
+Balwyn,Dec 2023,2023-12-01,650
+Balwyn,Mar 2024,2024-03-01,680
+Balwyn,Jun 2024,2024-06-01,680
+Balwyn,Sep 2024,2024-09-01,700
+Balwyn,Dec 2024,2024-12-01,700
+Balwyn,Mar 2025,2025-03-01,700
+Balwyn,Jun 2025,2025-06-01,720
+Bayswater,Mar 2020,2020-03-01,390
+Bayswater,Jun 2020,2020-06-01,390
+Bayswater,Sep 2020,2020-09-01,390
+Bayswater,Dec 2020,2020-12-01,390
+Bayswater,Mar 2021,2021-03-01,390
+Bayswater,Jun 2021,2021-06-01,400
+Bayswater,Sep 2021,2021-09-01,400
+Bayswater,Dec 2021,2021-12-01,410
+Bayswater,Mar 2022,2022-03-01,410
+Bayswater,Jun 2022,2022-06-01,420
+Bayswater,Sep 2022,2022-09-01,420
+Bayswater,Dec 2022,2022-12-01,425
+Bayswater,Mar 2023,2023-03-01,440
+Bayswater,Jun 2023,2023-06-01,450
+Bayswater,Sep 2023,2023-09-01,470
+Bayswater,Dec 2023,2023-12-01,485
+Bayswater,Mar 2024,2024-03-01,495
+Bayswater,Jun 2024,2024-06-01,500
+Bayswater,Sep 2024,2024-09-01,520
+Bayswater,Dec 2024,2024-12-01,550
+Bayswater,Mar 2025,2025-03-01,550
+Bayswater,Jun 2025,2025-06-01,550
+Benalla,Mar 2020,2020-03-01,300
+Benalla,Jun 2020,2020-06-01,300
+Benalla,Sep 2020,2020-09-01,300
+Benalla,Dec 2020,2020-12-01,310
+Benalla,Mar 2021,2021-03-01,320
+Benalla,Jun 2021,2021-06-01,330
+Benalla,Sep 2021,2021-09-01,350
+Benalla,Dec 2021,2021-12-01,350
+Benalla,Mar 2022,2022-03-01,360
+Benalla,Jun 2022,2022-06-01,370
+Benalla,Sep 2022,2022-09-01,380
+Benalla,Dec 2022,2022-12-01,390
+Benalla,Mar 2023,2023-03-01,393
+Benalla,Jun 2023,2023-06-01,395
+Benalla,Sep 2023,2023-09-01,400
+Benalla,Dec 2023,2023-12-01,400
+Benalla,Mar 2024,2024-03-01,400
+Benalla,Jun 2024,2024-06-01,400
+Benalla,Sep 2024,2024-09-01,420
+Benalla,Dec 2024,2024-12-01,425
+Benalla,Mar 2025,2025-03-01,440
+Benalla,Jun 2025,2025-06-01,443
+Bendigo,Mar 2020,2020-03-01,320
+Bendigo,Jun 2020,2020-06-01,330
+Bendigo,Sep 2020,2020-09-01,340
+Bendigo,Dec 2020,2020-12-01,340
+Bendigo,Mar 2021,2021-03-01,340
+Bendigo,Jun 2021,2021-06-01,350
+Bendigo,Sep 2021,2021-09-01,350
+Bendigo,Dec 2021,2021-12-01,360
+Bendigo,Mar 2022,2022-03-01,370
+Bendigo,Jun 2022,2022-06-01,375
+Bendigo,Sep 2022,2022-09-01,380
+Bendigo,Dec 2022,2022-12-01,380
+Bendigo,Mar 2023,2023-03-01,383
+Bendigo,Jun 2023,2023-06-01,395
+Bendigo,Sep 2023,2023-09-01,400
+Bendigo,Dec 2023,2023-12-01,410
+Bendigo,Mar 2024,2024-03-01,420
+Bendigo,Jun 2024,2024-06-01,420
+Bendigo,Sep 2024,2024-09-01,440
+Bendigo,Dec 2024,2024-12-01,450
+Bendigo,Mar 2025,2025-03-01,450
+Bendigo,Jun 2025,2025-06-01,460
+Bentleigh,Mar 2020,2020-03-01,510
+Bentleigh,Jun 2020,2020-06-01,500
+Bentleigh,Sep 2020,2020-09-01,500
+Bentleigh,Dec 2020,2020-12-01,495
+Bentleigh,Mar 2021,2021-03-01,490
+Bentleigh,Jun 2021,2021-06-01,485
+Bentleigh,Sep 2021,2021-09-01,490
+Bentleigh,Dec 2021,2021-12-01,495
+Bentleigh,Mar 2022,2022-03-01,495
+Bentleigh,Jun 2022,2022-06-01,500
+Bentleigh,Sep 2022,2022-09-01,501
+Bentleigh,Dec 2022,2022-12-01,523
+Bentleigh,Mar 2023,2023-03-01,550
+Bentleigh,Jun 2023,2023-06-01,560
+Bentleigh,Sep 2023,2023-09-01,590
+Bentleigh,Dec 2023,2023-12-01,600
+Bentleigh,Mar 2024,2024-03-01,635
+Bentleigh,Jun 2024,2024-06-01,650
+Bentleigh,Sep 2024,2024-09-01,650
+Bentleigh,Dec 2024,2024-12-01,675
+Bentleigh,Mar 2025,2025-03-01,680
+Bentleigh,Jun 2025,2025-06-01,680
+Berwick,Mar 2020,2020-03-01,395
+Berwick,Jun 2020,2020-06-01,400
+Berwick,Sep 2020,2020-09-01,400
+Berwick,Dec 2020,2020-12-01,400
+Berwick,Mar 2021,2021-03-01,400
+Berwick,Jun 2021,2021-06-01,410
+Berwick,Sep 2021,2021-09-01,410
+Berwick,Dec 2021,2021-12-01,420
+Berwick,Mar 2022,2022-03-01,430
+Berwick,Jun 2022,2022-06-01,440
+Berwick,Sep 2022,2022-09-01,450
+Berwick,Dec 2022,2022-12-01,460
+Berwick,Mar 2023,2023-03-01,470
+Berwick,Jun 2023,2023-06-01,485
+Berwick,Sep 2023,2023-09-01,500
+Berwick,Dec 2023,2023-12-01,520
+Berwick,Mar 2024,2024-03-01,535
+Berwick,Jun 2024,2024-06-01,550
+Berwick,Sep 2024,2024-09-01,570
+Berwick,Dec 2024,2024-12-01,580
+Berwick,Mar 2025,2025-03-01,595
+Berwick,Jun 2025,2025-06-01,600
+Blackburn,Mar 2020,2020-03-01,440
+Blackburn,Jun 2020,2020-06-01,440
+Blackburn,Sep 2020,2020-09-01,431
+Blackburn,Dec 2020,2020-12-01,430
+Blackburn,Mar 2021,2021-03-01,425
+Blackburn,Jun 2021,2021-06-01,420
+Blackburn,Sep 2021,2021-09-01,420
+Blackburn,Dec 2021,2021-12-01,430
+Blackburn,Mar 2022,2022-03-01,435
+Blackburn,Jun 2022,2022-06-01,440
+Blackburn,Sep 2022,2022-09-01,450
+Blackburn,Dec 2022,2022-12-01,450
+Blackburn,Mar 2023,2023-03-01,460
+Blackburn,Jun 2023,2023-06-01,480
+Blackburn,Sep 2023,2023-09-01,500
+Blackburn,Dec 2023,2023-12-01,520
+Blackburn,Mar 2024,2024-03-01,550
+Blackburn,Jun 2024,2024-06-01,560
+Blackburn,Sep 2024,2024-09-01,580
+Blackburn,Dec 2024,2024-12-01,598
+Blackburn,Mar 2025,2025-03-01,600
+Blackburn,Jun 2025,2025-06-01,600
+Boronia,Mar 2020,2020-03-01,390
+Boronia,Jun 2020,2020-06-01,395
+Boronia,Sep 2020,2020-09-01,395
+Boronia,Dec 2020,2020-12-01,395
+Boronia,Mar 2021,2021-03-01,395
+Boronia,Jun 2021,2021-06-01,395
+Boronia,Sep 2021,2021-09-01,400
+Boronia,Dec 2021,2021-12-01,400
+Boronia,Mar 2022,2022-03-01,405
+Boronia,Jun 2022,2022-06-01,415
+Boronia,Sep 2022,2022-09-01,420
+Boronia,Dec 2022,2022-12-01,430
+Boronia,Mar 2023,2023-03-01,450
+Boronia,Jun 2023,2023-06-01,450
+Boronia,Sep 2023,2023-09-01,460
+Boronia,Dec 2023,2023-12-01,480
+Boronia,Mar 2024,2024-03-01,493
+Boronia,Jun 2024,2024-06-01,510
+Boronia,Sep 2024,2024-09-01,530
+Boronia,Dec 2024,2024-12-01,550
+Boronia,Mar 2025,2025-03-01,550
+Boronia,Jun 2025,2025-06-01,560
+Box Hill,Mar 2020,2020-03-01,465
+Box Hill,Jun 2020,2020-06-01,460
+Box Hill,Sep 2020,2020-09-01,450
+Box Hill,Dec 2020,2020-12-01,430
+Box Hill,Mar 2021,2021-03-01,410
+Box Hill,Jun 2021,2021-06-01,400
+Box Hill,Sep 2021,2021-09-01,400
+Box Hill,Dec 2021,2021-12-01,400
+Box Hill,Mar 2022,2022-03-01,410
+Box Hill,Jun 2022,2022-06-01,420
+Box Hill,Sep 2022,2022-09-01,430
+Box Hill,Dec 2022,2022-12-01,450
+Box Hill,Mar 2023,2023-03-01,475
+Box Hill,Jun 2023,2023-06-01,500
+Box Hill,Sep 2023,2023-09-01,540
+Box Hill,Dec 2023,2023-12-01,550
+Box Hill,Mar 2024,2024-03-01,580
+Box Hill,Jun 2024,2024-06-01,595
+Box Hill,Sep 2024,2024-09-01,600
+Box Hill,Dec 2024,2024-12-01,600
+Box Hill,Mar 2025,2025-03-01,600
+Box Hill,Jun 2025,2025-06-01,600
+Brighton,Mar 2020,2020-03-01,688
+Brighton,Jun 2020,2020-06-01,680
+Brighton,Sep 2020,2020-09-01,683
+Brighton,Dec 2020,2020-12-01,675
+Brighton,Mar 2021,2021-03-01,670
+Brighton,Jun 2021,2021-06-01,653
+Brighton,Sep 2021,2021-09-01,650
+Brighton,Dec 2021,2021-12-01,663
+Brighton,Mar 2022,2022-03-01,650
+Brighton,Jun 2022,2022-06-01,670
+Brighton,Sep 2022,2022-09-01,675
+Brighton,Dec 2022,2022-12-01,678
+Brighton,Mar 2023,2023-03-01,730
+Brighton,Jun 2023,2023-06-01,740
+Brighton,Sep 2023,2023-09-01,770
+Brighton,Dec 2023,2023-12-01,805
+Brighton,Mar 2024,2024-03-01,775
+Brighton,Jun 2024,2024-06-01,700
+Brighton,Sep 2024,2024-09-01,695
+Brighton,Dec 2024,2024-12-01,691
+Brighton,Mar 2025,2025-03-01,725
+Brighton,Jun 2025,2025-06-01,800
+Brighton East,Mar 2020,2020-03-01,745
+Brighton East,Jun 2020,2020-06-01,750
+Brighton East,Sep 2020,2020-09-01,730
+Brighton East,Dec 2020,2020-12-01,718
+Brighton East,Mar 2021,2021-03-01,695
+Brighton East,Jun 2021,2021-06-01,700
+Brighton East,Sep 2021,2021-09-01,725
+Brighton East,Dec 2021,2021-12-01,750
+Brighton East,Mar 2022,2022-03-01,750
+Brighton East,Jun 2022,2022-06-01,750
+Brighton East,Sep 2022,2022-09-01,750
+Brighton East,Dec 2022,2022-12-01,753
+Brighton East,Mar 2023,2023-03-01,788
+Brighton East,Jun 2023,2023-06-01,790
+Brighton East,Sep 2023,2023-09-01,800
+Brighton East,Dec 2023,2023-12-01,800
+Brighton East,Mar 2024,2024-03-01,850
+Brighton East,Jun 2024,2024-06-01,850
+Brighton East,Sep 2024,2024-09-01,865
+Brighton East,Dec 2024,2024-12-01,868
+Brighton East,Mar 2025,2025-03-01,800
+Brighton East,Jun 2025,2025-06-01,800
+Brunswick,Mar 2020,2020-03-01,480
+Brunswick,Jun 2020,2020-06-01,480
+Brunswick,Sep 2020,2020-09-01,480
+Brunswick,Dec 2020,2020-12-01,460
+Brunswick,Mar 2021,2021-03-01,450
+Brunswick,Jun 2021,2021-06-01,425
+Brunswick,Sep 2021,2021-09-01,420
+Brunswick,Dec 2021,2021-12-01,420
+Brunswick,Mar 2022,2022-03-01,420
+Brunswick,Jun 2022,2022-06-01,430
+Brunswick,Sep 2022,2022-09-01,450
+Brunswick,Dec 2022,2022-12-01,455
+Brunswick,Mar 2023,2023-03-01,490
+Brunswick,Jun 2023,2023-06-01,510
+Brunswick,Sep 2023,2023-09-01,540
+Brunswick,Dec 2023,2023-12-01,550
+Brunswick,Mar 2024,2024-03-01,550
+Brunswick,Jun 2024,2024-06-01,570
+Brunswick,Sep 2024,2024-09-01,580
+Brunswick,Dec 2024,2024-12-01,590
+Brunswick,Mar 2025,2025-03-01,595
+Brunswick,Jun 2025,2025-06-01,600
+Carlton North,Mar 2020,2020-03-01,590
+Carlton North,Jun 2020,2020-06-01,590
+Carlton North,Sep 2020,2020-09-01,590
+Carlton North,Dec 2020,2020-12-01,590
+Carlton North,Mar 2021,2021-03-01,580
+Carlton North,Jun 2021,2021-06-01,575
+Carlton North,Sep 2021,2021-09-01,575
+Carlton North,Dec 2021,2021-12-01,580
+Carlton North,Mar 2022,2022-03-01,580
+Carlton North,Jun 2022,2022-06-01,595
+Carlton North,Sep 2022,2022-09-01,600
+Carlton North,Dec 2022,2022-12-01,600
+Carlton North,Mar 2023,2023-03-01,620
+Carlton North,Jun 2023,2023-06-01,630
+Carlton North,Sep 2023,2023-09-01,650
+Carlton North,Dec 2023,2023-12-01,670
+Carlton North,Mar 2024,2024-03-01,680
+Carlton North,Jun 2024,2024-06-01,690
+Carlton North,Sep 2024,2024-09-01,680
+Carlton North,Dec 2024,2024-12-01,700
+Carlton North,Mar 2025,2025-03-01,720
+Carlton North,Jun 2025,2025-06-01,750
+Carnegie,Mar 2020,2020-03-01,440
+Carnegie,Jun 2020,2020-06-01,440
+Carnegie,Sep 2020,2020-09-01,435
+Carnegie,Dec 2020,2020-12-01,430
+Carnegie,Mar 2021,2021-03-01,410
+Carnegie,Jun 2021,2021-06-01,400
+Carnegie,Sep 2021,2021-09-01,395
+Carnegie,Dec 2021,2021-12-01,390
+Carnegie,Mar 2022,2022-03-01,390
+Carnegie,Jun 2022,2022-06-01,395
+Carnegie,Sep 2022,2022-09-01,400
+Carnegie,Dec 2022,2022-12-01,410
+Carnegie,Mar 2023,2023-03-01,435
+Carnegie,Jun 2023,2023-06-01,450
+Carnegie,Sep 2023,2023-09-01,480
+Carnegie,Dec 2023,2023-12-01,505
+Carnegie,Mar 2024,2024-03-01,520
+Carnegie,Jun 2024,2024-06-01,530
+Carnegie,Sep 2024,2024-09-01,550
+Carnegie,Dec 2024,2024-12-01,550
+Carnegie,Mar 2025,2025-03-01,550
+Carnegie,Jun 2025,2025-06-01,560
+Castlemaine,Mar 2020,2020-03-01,350
+Castlemaine,Jun 2020,2020-06-01,345
+Castlemaine,Sep 2020,2020-09-01,350
+Castlemaine,Dec 2020,2020-12-01,350
+Castlemaine,Mar 2021,2021-03-01,350
+Castlemaine,Jun 2021,2021-06-01,375
+Castlemaine,Sep 2021,2021-09-01,375
+Castlemaine,Dec 2021,2021-12-01,380
+Castlemaine,Mar 2022,2022-03-01,385
+Castlemaine,Jun 2022,2022-06-01,390
+Castlemaine,Sep 2022,2022-09-01,408
+Castlemaine,Dec 2022,2022-12-01,420
+Castlemaine,Mar 2023,2023-03-01,430
+Castlemaine,Jun 2023,2023-06-01,420
+Castlemaine,Sep 2023,2023-09-01,420
+Castlemaine,Dec 2023,2023-12-01,430
+Castlemaine,Mar 2024,2024-03-01,450
+Castlemaine,Jun 2024,2024-06-01,450
+Castlemaine,Sep 2024,2024-09-01,460
+Castlemaine,Dec 2024,2024-12-01,455
+Castlemaine,Mar 2025,2025-03-01,460
+Castlemaine,Jun 2025,2025-06-01,470
+Caulfield,Mar 2020,2020-03-01,485
+Caulfield,Jun 2020,2020-06-01,485
+Caulfield,Sep 2020,2020-09-01,480
+Caulfield,Dec 2020,2020-12-01,460
+Caulfield,Mar 2021,2021-03-01,425
+Caulfield,Jun 2021,2021-06-01,410
+Caulfield,Sep 2021,2021-09-01,400
+Caulfield,Dec 2021,2021-12-01,400
+Caulfield,Mar 2022,2022-03-01,410
+Caulfield,Jun 2022,2022-06-01,420
+Caulfield,Sep 2022,2022-09-01,440
+Caulfield,Dec 2022,2022-12-01,460
+Caulfield,Mar 2023,2023-03-01,500
+Caulfield,Jun 2023,2023-06-01,530
+Caulfield,Sep 2023,2023-09-01,550
+Caulfield,Dec 2023,2023-12-01,580
+Caulfield,Mar 2024,2024-03-01,600
+Caulfield,Jun 2024,2024-06-01,610
+Caulfield,Sep 2024,2024-09-01,640
+Caulfield,Dec 2024,2024-12-01,645
+Caulfield,Mar 2025,2025-03-01,650
+Caulfield,Jun 2025,2025-06-01,650
+Cheltenham,Mar 2020,2020-03-01,470
+Cheltenham,Jun 2020,2020-06-01,470
+Cheltenham,Sep 2020,2020-09-01,475
+Cheltenham,Dec 2020,2020-12-01,470
+Cheltenham,Mar 2021,2021-03-01,460
+Cheltenham,Jun 2021,2021-06-01,460
+Cheltenham,Sep 2021,2021-09-01,460
+Cheltenham,Dec 2021,2021-12-01,470
+Cheltenham,Mar 2022,2022-03-01,480
+Cheltenham,Jun 2022,2022-06-01,485
+Cheltenham,Sep 2022,2022-09-01,495
+Cheltenham,Dec 2022,2022-12-01,495
+Cheltenham,Mar 2023,2023-03-01,500
+Cheltenham,Jun 2023,2023-06-01,510
+Cheltenham,Sep 2023,2023-09-01,525
+Cheltenham,Dec 2023,2023-12-01,550
+Cheltenham,Mar 2024,2024-03-01,575
+Cheltenham,Jun 2024,2024-06-01,590
+Cheltenham,Sep 2024,2024-09-01,600
+Cheltenham,Dec 2024,2024-12-01,600
+Cheltenham,Mar 2025,2025-03-01,620
+Cheltenham,Jun 2025,2025-06-01,620
+Clayton,Mar 2020,2020-03-01,430
+Clayton,Jun 2020,2020-06-01,430
+Clayton,Sep 2020,2020-09-01,420
+Clayton,Dec 2020,2020-12-01,420
+Clayton,Mar 2021,2021-03-01,400
+Clayton,Jun 2021,2021-06-01,400
+Clayton,Sep 2021,2021-09-01,400
+Clayton,Dec 2021,2021-12-01,400
+Clayton,Mar 2022,2022-03-01,400
+Clayton,Jun 2022,2022-06-01,415
+Clayton,Sep 2022,2022-09-01,430
+Clayton,Dec 2022,2022-12-01,445
+Clayton,Mar 2023,2023-03-01,450
+Clayton,Jun 2023,2023-06-01,480
+Clayton,Sep 2023,2023-09-01,500
+Clayton,Dec 2023,2023-12-01,520
+Clayton,Mar 2024,2024-03-01,550
+Clayton,Jun 2024,2024-06-01,570
+Clayton,Sep 2024,2024-09-01,590
+Clayton,Dec 2024,2024-12-01,595
+Clayton,Mar 2025,2025-03-01,600
+Clayton,Jun 2025,2025-06-01,600
+Corio,Mar 2020,2020-03-01,300
+Corio,Jun 2020,2020-06-01,300
+Corio,Sep 2020,2020-09-01,300
+Corio,Dec 2020,2020-12-01,300
+Corio,Mar 2021,2021-03-01,300
+Corio,Jun 2021,2021-06-01,305
+Corio,Sep 2021,2021-09-01,320
+Corio,Dec 2021,2021-12-01,320
+Corio,Mar 2022,2022-03-01,330
+Corio,Jun 2022,2022-06-01,330
+Corio,Sep 2022,2022-09-01,340
+Corio,Dec 2022,2022-12-01,350
+Corio,Mar 2023,2023-03-01,350
+Corio,Jun 2023,2023-06-01,360
+Corio,Sep 2023,2023-09-01,365
+Corio,Dec 2023,2023-12-01,370
+Corio,Mar 2024,2024-03-01,380
+Corio,Jun 2024,2024-06-01,385
+Corio,Sep 2024,2024-09-01,390
+Corio,Dec 2024,2024-12-01,390
+Corio,Mar 2025,2025-03-01,395
+Corio,Jun 2025,2025-06-01,400
+Craigieburn,Mar 2020,2020-03-01,390
+Craigieburn,Jun 2020,2020-06-01,390
+Craigieburn,Sep 2020,2020-09-01,390
+Craigieburn,Dec 2020,2020-12-01,390
+Craigieburn,Mar 2021,2021-03-01,390
+Craigieburn,Jun 2021,2021-06-01,390
+Craigieburn,Sep 2021,2021-09-01,390
+Craigieburn,Dec 2021,2021-12-01,390
+Craigieburn,Mar 2022,2022-03-01,400
+Craigieburn,Jun 2022,2022-06-01,400
+Craigieburn,Sep 2022,2022-09-01,410
+Craigieburn,Dec 2022,2022-12-01,420
+Craigieburn,Mar 2023,2023-03-01,425
+Craigieburn,Jun 2023,2023-06-01,430
+Craigieburn,Sep 2023,2023-09-01,450
+Craigieburn,Dec 2023,2023-12-01,460
+Craigieburn,Mar 2024,2024-03-01,480
+Craigieburn,Jun 2024,2024-06-01,500
+Craigieburn,Sep 2024,2024-09-01,506
+Craigieburn,Dec 2024,2024-12-01,520
+Craigieburn,Mar 2025,2025-03-01,525
+Craigieburn,Jun 2025,2025-06-01,522
+Cranbourne,Mar 2020,2020-03-01,388
+Cranbourne,Jun 2020,2020-06-01,390
+Cranbourne,Sep 2020,2020-09-01,390
+Cranbourne,Dec 2020,2020-12-01,395
+Cranbourne,Mar 2021,2021-03-01,395
+Cranbourne,Jun 2021,2021-06-01,400
+Cranbourne,Sep 2021,2021-09-01,400
+Cranbourne,Dec 2021,2021-12-01,410
+Cranbourne,Mar 2022,2022-03-01,420
+Cranbourne,Jun 2022,2022-06-01,430
+Cranbourne,Sep 2022,2022-09-01,440
+Cranbourne,Dec 2022,2022-12-01,450
+Cranbourne,Mar 2023,2023-03-01,460
+Cranbourne,Jun 2023,2023-06-01,480
+Cranbourne,Sep 2023,2023-09-01,490
+Cranbourne,Dec 2023,2023-12-01,500
+Cranbourne,Mar 2024,2024-03-01,525
+Cranbourne,Jun 2024,2024-06-01,550
+Cranbourne,Sep 2024,2024-09-01,560
+Cranbourne,Dec 2024,2024-12-01,575
+Cranbourne,Mar 2025,2025-03-01,580
+Cranbourne,Jun 2025,2025-06-01,580
+Dandenong,Mar 2020,2020-03-01,350
+Dandenong,Jun 2020,2020-06-01,350
+Dandenong,Sep 2020,2020-09-01,350
+Dandenong,Dec 2020,2020-12-01,350
+Dandenong,Mar 2021,2021-03-01,350
+Dandenong,Jun 2021,2021-06-01,350
+Dandenong,Sep 2021,2021-09-01,350
+Dandenong,Dec 2021,2021-12-01,350
+Dandenong,Mar 2022,2022-03-01,350
+Dandenong,Jun 2022,2022-06-01,360
+Dandenong,Sep 2022,2022-09-01,360
+Dandenong,Dec 2022,2022-12-01,367
+Dandenong,Mar 2023,2023-03-01,370
+Dandenong,Jun 2023,2023-06-01,385
+Dandenong,Sep 2023,2023-09-01,400
+Dandenong,Dec 2023,2023-12-01,420
+Dandenong,Mar 2024,2024-03-01,440
+Dandenong,Jun 2024,2024-06-01,480
+Dandenong,Sep 2024,2024-09-01,500
+Dandenong,Dec 2024,2024-12-01,520
+Dandenong,Mar 2025,2025-03-01,530
+Dandenong,Jun 2025,2025-06-01,520
+East Melbourne,Mar 2020,2020-03-01,570
+East Melbourne,Jun 2020,2020-06-01,560
+East Melbourne,Sep 2020,2020-09-01,520
+East Melbourne,Dec 2020,2020-12-01,500
+East Melbourne,Mar 2021,2021-03-01,450
+East Melbourne,Jun 2021,2021-06-01,450
+East Melbourne,Sep 2021,2021-09-01,450
+East Melbourne,Dec 2021,2021-12-01,450
+East Melbourne,Mar 2022,2022-03-01,470
+East Melbourne,Jun 2022,2022-06-01,475
+East Melbourne,Sep 2022,2022-09-01,500
+East Melbourne,Dec 2022,2022-12-01,500
+East Melbourne,Mar 2023,2023-03-01,550
+East Melbourne,Jun 2023,2023-06-01,555
+East Melbourne,Sep 2023,2023-09-01,575
+East Melbourne,Dec 2023,2023-12-01,595
+East Melbourne,Mar 2024,2024-03-01,600
+East Melbourne,Jun 2024,2024-06-01,600
+East Melbourne,Sep 2024,2024-09-01,600
+East Melbourne,Dec 2024,2024-12-01,625
+East Melbourne,Mar 2025,2025-03-01,629
+East Melbourne,Jun 2025,2025-06-01,630
+Echuca,Mar 2020,2020-03-01,330
+Echuca,Jun 2020,2020-06-01,338
+Echuca,Sep 2020,2020-09-01,340
+Echuca,Dec 2020,2020-12-01,350
+Echuca,Mar 2021,2021-03-01,355
+Echuca,Jun 2021,2021-06-01,360
+Echuca,Sep 2021,2021-09-01,358
+Echuca,Dec 2021,2021-12-01,363
+Echuca,Mar 2022,2022-03-01,375
+Echuca,Jun 2022,2022-06-01,380
+Echuca,Sep 2022,2022-09-01,390
+Echuca,Dec 2022,2022-12-01,397
+Echuca,Mar 2023,2023-03-01,410
+Echuca,Jun 2023,2023-06-01,410
+Echuca,Sep 2023,2023-09-01,420
+Echuca,Dec 2023,2023-12-01,430
+Echuca,Mar 2024,2024-03-01,440
+Echuca,Jun 2024,2024-06-01,450
+Echuca,Sep 2024,2024-09-01,450
+Echuca,Dec 2024,2024-12-01,450
+Echuca,Mar 2025,2025-03-01,450
+Echuca,Jun 2025,2025-06-01,450
+Elsternwick,Mar 2020,2020-03-01,440
+Elsternwick,Jun 2020,2020-06-01,450
+Elsternwick,Sep 2020,2020-09-01,455
+Elsternwick,Dec 2020,2020-12-01,450
+Elsternwick,Mar 2021,2021-03-01,450
+Elsternwick,Jun 2021,2021-06-01,449
+Elsternwick,Sep 2021,2021-09-01,433
+Elsternwick,Dec 2021,2021-12-01,430
+Elsternwick,Mar 2022,2022-03-01,430
+Elsternwick,Jun 2022,2022-06-01,440
+Elsternwick,Sep 2022,2022-09-01,450
+Elsternwick,Dec 2022,2022-12-01,450
+Elsternwick,Mar 2023,2023-03-01,470
+Elsternwick,Jun 2023,2023-06-01,490
+Elsternwick,Sep 2023,2023-09-01,510
+Elsternwick,Dec 2023,2023-12-01,550
+Elsternwick,Mar 2024,2024-03-01,550
+Elsternwick,Jun 2024,2024-06-01,570
+Elsternwick,Sep 2024,2024-09-01,575
+Elsternwick,Dec 2024,2024-12-01,580
+Elsternwick,Mar 2025,2025-03-01,600
+Elsternwick,Jun 2025,2025-06-01,598
+Elwood,Mar 2020,2020-03-01,450
+Elwood,Jun 2020,2020-06-01,450
+Elwood,Sep 2020,2020-09-01,450
+Elwood,Dec 2020,2020-12-01,440
+Elwood,Mar 2021,2021-03-01,425
+Elwood,Jun 2021,2021-06-01,420
+Elwood,Sep 2021,2021-09-01,420
+Elwood,Dec 2021,2021-12-01,420
+Elwood,Mar 2022,2022-03-01,420
+Elwood,Jun 2022,2022-06-01,420
+Elwood,Sep 2022,2022-09-01,430
+Elwood,Dec 2022,2022-12-01,430
+Elwood,Mar 2023,2023-03-01,450
+Elwood,Jun 2023,2023-06-01,480
+Elwood,Sep 2023,2023-09-01,500
+Elwood,Dec 2023,2023-12-01,520
+Elwood,Mar 2024,2024-03-01,550
+Elwood,Jun 2024,2024-06-01,560
+Elwood,Sep 2024,2024-09-01,580
+Elwood,Dec 2024,2024-12-01,580
+Elwood,Mar 2025,2025-03-01,575
+Elwood,Jun 2025,2025-06-01,575
+Essendon,Mar 2020,2020-03-01,415
+Essendon,Jun 2020,2020-06-01,415
+Essendon,Sep 2020,2020-09-01,415
+Essendon,Dec 2020,2020-12-01,410
+Essendon,Mar 2021,2021-03-01,400
+Essendon,Jun 2021,2021-06-01,400
+Essendon,Sep 2021,2021-09-01,399
+Essendon,Dec 2021,2021-12-01,400
+Essendon,Mar 2022,2022-03-01,400
+Essendon,Jun 2022,2022-06-01,400
+Essendon,Sep 2022,2022-09-01,400
+Essendon,Dec 2022,2022-12-01,410
+Essendon,Mar 2023,2023-03-01,425
+Essendon,Jun 2023,2023-06-01,450
+Essendon,Sep 2023,2023-09-01,465
+Essendon,Dec 2023,2023-12-01,490
+Essendon,Mar 2024,2024-03-01,500
+Essendon,Jun 2024,2024-06-01,510
+Essendon,Sep 2024,2024-09-01,530
+Essendon,Dec 2024,2024-12-01,540
+Essendon,Mar 2025,2025-03-01,550
+Essendon,Jun 2025,2025-06-01,550
+Ferntree Gully,Mar 2020,2020-03-01,410
+Ferntree Gully,Jun 2020,2020-06-01,420
+Ferntree Gully,Sep 2020,2020-09-01,420
+Ferntree Gully,Dec 2020,2020-12-01,420
+Ferntree Gully,Mar 2021,2021-03-01,420
+Ferntree Gully,Jun 2021,2021-06-01,420
+Ferntree Gully,Sep 2021,2021-09-01,420
+Ferntree Gully,Dec 2021,2021-12-01,430
+Ferntree Gully,Mar 2022,2022-03-01,430
+Ferntree Gully,Jun 2022,2022-06-01,435
+Ferntree Gully,Sep 2022,2022-09-01,440
+Ferntree Gully,Dec 2022,2022-12-01,450
+Ferntree Gully,Mar 2023,2023-03-01,460
+Ferntree Gully,Jun 2023,2023-06-01,475
+Ferntree Gully,Sep 2023,2023-09-01,490
+Ferntree Gully,Dec 2023,2023-12-01,500
+Ferntree Gully,Mar 2024,2024-03-01,530
+Ferntree Gully,Jun 2024,2024-06-01,550
+Ferntree Gully,Sep 2024,2024-09-01,560
+Ferntree Gully,Dec 2024,2024-12-01,580
+Ferntree Gully,Mar 2025,2025-03-01,580
+Ferntree Gully,Jun 2025,2025-06-01,590
+Fitzroy,Mar 2020,2020-03-01,575
+Fitzroy,Jun 2020,2020-06-01,570
+Fitzroy,Sep 2020,2020-09-01,565
+Fitzroy,Dec 2020,2020-12-01,550
+Fitzroy,Mar 2021,2021-03-01,550
+Fitzroy,Jun 2021,2021-06-01,535
+Fitzroy,Sep 2021,2021-09-01,525
+Fitzroy,Dec 2021,2021-12-01,540
+Fitzroy,Mar 2022,2022-03-01,540
+Fitzroy,Jun 2022,2022-06-01,540
+Fitzroy,Sep 2022,2022-09-01,550
+Fitzroy,Dec 2022,2022-12-01,560
+Fitzroy,Mar 2023,2023-03-01,590
+Fitzroy,Jun 2023,2023-06-01,600
+Fitzroy,Sep 2023,2023-09-01,605
+Fitzroy,Dec 2023,2023-12-01,630
+Fitzroy,Mar 2024,2024-03-01,650
+Fitzroy,Jun 2024,2024-06-01,650
+Fitzroy,Sep 2024,2024-09-01,660
+Fitzroy,Dec 2024,2024-12-01,680
+Fitzroy,Mar 2025,2025-03-01,695
+Fitzroy,Jun 2025,2025-06-01,700
+Footscray,Mar 2020,2020-03-01,400
+Footscray,Jun 2020,2020-06-01,400
+Footscray,Sep 2020,2020-09-01,390
+Footscray,Dec 2020,2020-12-01,380
+Footscray,Mar 2021,2021-03-01,370
+Footscray,Jun 2021,2021-06-01,365
+Footscray,Sep 2021,2021-09-01,365
+Footscray,Dec 2021,2021-12-01,365
+Footscray,Mar 2022,2022-03-01,365
+Footscray,Jun 2022,2022-06-01,370
+Footscray,Sep 2022,2022-09-01,380
+Footscray,Dec 2022,2022-12-01,390
+Footscray,Mar 2023,2023-03-01,400
+Footscray,Jun 2023,2023-06-01,430
+Footscray,Sep 2023,2023-09-01,450
+Footscray,Dec 2023,2023-12-01,470
+Footscray,Mar 2024,2024-03-01,490
+Footscray,Jun 2024,2024-06-01,500
+Footscray,Sep 2024,2024-09-01,520
+Footscray,Dec 2024,2024-12-01,520
+Footscray,Mar 2025,2025-03-01,520
+Footscray,Jun 2025,2025-06-01,520
+Frankston,Mar 2020,2020-03-01,370
+Frankston,Jun 2020,2020-06-01,370
+Frankston,Sep 2020,2020-09-01,370
+Frankston,Dec 2020,2020-12-01,375
+Frankston,Mar 2021,2021-03-01,375
+Frankston,Jun 2021,2021-06-01,380
+Frankston,Sep 2021,2021-09-01,390
+Frankston,Dec 2021,2021-12-01,400
+Frankston,Mar 2022,2022-03-01,410
+Frankston,Jun 2022,2022-06-01,420
+Frankston,Sep 2022,2022-09-01,430
+Frankston,Dec 2022,2022-12-01,440
+Frankston,Mar 2023,2023-03-01,450
+Frankston,Jun 2023,2023-06-01,450
+Frankston,Sep 2023,2023-09-01,462
+Frankston,Dec 2023,2023-12-01,475
+Frankston,Mar 2024,2024-03-01,490
+Frankston,Jun 2024,2024-06-01,500
+Frankston,Sep 2024,2024-09-01,510
+Frankston,Dec 2024,2024-12-01,520
+Frankston,Mar 2025,2025-03-01,530
+Frankston,Jun 2025,2025-06-01,540
+Hamilton,Mar 2020,2020-03-01,270
+Hamilton,Jun 2020,2020-06-01,270
+Hamilton,Sep 2020,2020-09-01,270
+Hamilton,Dec 2020,2020-12-01,275
+Hamilton,Mar 2021,2021-03-01,280
+Hamilton,Jun 2021,2021-06-01,280
+Hamilton,Sep 2021,2021-09-01,290
+Hamilton,Dec 2021,2021-12-01,300
+Hamilton,Mar 2022,2022-03-01,300
+Hamilton,Jun 2022,2022-06-01,320
+Hamilton,Sep 2022,2022-09-01,320
+Hamilton,Dec 2022,2022-12-01,330
+Hamilton,Mar 2023,2023-03-01,330
+Hamilton,Jun 2023,2023-06-01,330
+Hamilton,Sep 2023,2023-09-01,335
+Hamilton,Dec 2023,2023-12-01,340
+Hamilton,Mar 2024,2024-03-01,340
+Hamilton,Jun 2024,2024-06-01,350
+Hamilton,Sep 2024,2024-09-01,350
+Hamilton,Dec 2024,2024-12-01,350
+Hamilton,Mar 2025,2025-03-01,353
+Hamilton,Jun 2025,2025-06-01,350
+Hawthorn,Mar 2020,2020-03-01,435
+Hawthorn,Jun 2020,2020-06-01,440
+Hawthorn,Sep 2020,2020-09-01,430
+Hawthorn,Dec 2020,2020-12-01,420
+Hawthorn,Mar 2021,2021-03-01,400
+Hawthorn,Jun 2021,2021-06-01,385
+Hawthorn,Sep 2021,2021-09-01,380
+Hawthorn,Dec 2021,2021-12-01,375
+Hawthorn,Mar 2022,2022-03-01,375
+Hawthorn,Jun 2022,2022-06-01,375
+Hawthorn,Sep 2022,2022-09-01,385
+Hawthorn,Dec 2022,2022-12-01,400
+Hawthorn,Mar 2023,2023-03-01,420
+Hawthorn,Jun 2023,2023-06-01,450
+Hawthorn,Sep 2023,2023-09-01,470
+Hawthorn,Dec 2023,2023-12-01,495
+Hawthorn,Mar 2024,2024-03-01,520
+Hawthorn,Jun 2024,2024-06-01,539
+Hawthorn,Sep 2024,2024-09-01,530
+Hawthorn,Dec 2024,2024-12-01,530
+Hawthorn,Mar 2025,2025-03-01,530
+Hawthorn,Jun 2025,2025-06-01,530
+Horsham,Mar 2020,2020-03-01,275
+Horsham,Jun 2020,2020-06-01,280
+Horsham,Sep 2020,2020-09-01,280
+Horsham,Dec 2020,2020-12-01,285
+Horsham,Mar 2021,2021-03-01,290
+Horsham,Jun 2021,2021-06-01,300
+Horsham,Sep 2021,2021-09-01,315
+Horsham,Dec 2021,2021-12-01,320
+Horsham,Mar 2022,2022-03-01,330
+Horsham,Jun 2022,2022-06-01,330
+Horsham,Sep 2022,2022-09-01,340
+Horsham,Dec 2022,2022-12-01,340
+Horsham,Mar 2023,2023-03-01,350
+Horsham,Jun 2023,2023-06-01,350
+Horsham,Sep 2023,2023-09-01,350
+Horsham,Dec 2023,2023-12-01,360
+Horsham,Mar 2024,2024-03-01,370
+Horsham,Jun 2024,2024-06-01,380
+Horsham,Sep 2024,2024-09-01,380
+Horsham,Dec 2024,2024-12-01,380
+Horsham,Mar 2025,2025-03-01,380
+Horsham,Jun 2025,2025-06-01,380
+Keilor,Mar 2020,2020-03-01,420
+Keilor,Jun 2020,2020-06-01,410
+Keilor,Sep 2020,2020-09-01,410
+Keilor,Dec 2020,2020-12-01,410
+Keilor,Mar 2021,2021-03-01,415
+Keilor,Jun 2021,2021-06-01,420
+Keilor,Sep 2021,2021-09-01,420
+Keilor,Dec 2021,2021-12-01,440
+Keilor,Mar 2022,2022-03-01,450
+Keilor,Jun 2022,2022-06-01,460
+Keilor,Sep 2022,2022-09-01,450
+Keilor,Dec 2022,2022-12-01,450
+Keilor,Mar 2023,2023-03-01,480
+Keilor,Jun 2023,2023-06-01,480
+Keilor,Sep 2023,2023-09-01,510
+Keilor,Dec 2023,2023-12-01,515
+Keilor,Mar 2024,2024-03-01,575
+Keilor,Jun 2024,2024-06-01,600
+Keilor,Sep 2024,2024-09-01,610
+Keilor,Dec 2024,2024-12-01,625
+Keilor,Mar 2025,2025-03-01,633
+Keilor,Jun 2025,2025-06-01,630
+Kew,Mar 2020,2020-03-01,520
+Kew,Jun 2020,2020-06-01,525
+Kew,Sep 2020,2020-09-01,520
+Kew,Dec 2020,2020-12-01,500
+Kew,Mar 2021,2021-03-01,495
+Kew,Jun 2021,2021-06-01,480
+Kew,Sep 2021,2021-09-01,475
+Kew,Dec 2021,2021-12-01,475
+Kew,Mar 2022,2022-03-01,480
+Kew,Jun 2022,2022-06-01,495
+Kew,Sep 2022,2022-09-01,500
+Kew,Dec 2022,2022-12-01,500
+Kew,Mar 2023,2023-03-01,530
+Kew,Jun 2023,2023-06-01,550
+Kew,Sep 2023,2023-09-01,595
+Kew,Dec 2023,2023-12-01,610
+Kew,Mar 2024,2024-03-01,650
+Kew,Jun 2024,2024-06-01,650
+Kew,Sep 2024,2024-09-01,663
+Kew,Dec 2024,2024-12-01,680
+Kew,Mar 2025,2025-03-01,680
+Kew,Jun 2025,2025-06-01,680
+Lara,Mar 2020,2020-03-01,400
+Lara,Jun 2020,2020-06-01,400
+Lara,Sep 2020,2020-09-01,400
+Lara,Dec 2020,2020-12-01,400
+Lara,Mar 2021,2021-03-01,400
+Lara,Jun 2021,2021-06-01,420
+Lara,Sep 2021,2021-09-01,430
+Lara,Dec 2021,2021-12-01,438
+Lara,Mar 2022,2022-03-01,450
+Lara,Jun 2022,2022-06-01,450
+Lara,Sep 2022,2022-09-01,460
+Lara,Dec 2022,2022-12-01,480
+Lara,Mar 2023,2023-03-01,485
+Lara,Jun 2023,2023-06-01,490
+Lara,Sep 2023,2023-09-01,500
+Lara,Dec 2023,2023-12-01,500
+Lara,Mar 2024,2024-03-01,520
+Lara,Jun 2024,2024-06-01,520
+Lara,Sep 2024,2024-09-01,530
+Lara,Dec 2024,2024-12-01,540
+Lara,Mar 2025,2025-03-01,540
+Lara,Jun 2025,2025-06-01,550
+Malvern,Mar 2020,2020-03-01,480
+Malvern,Jun 2020,2020-06-01,465
+Malvern,Sep 2020,2020-09-01,480
+Malvern,Dec 2020,2020-12-01,470
+Malvern,Mar 2021,2021-03-01,450
+Malvern,Jun 2021,2021-06-01,450
+Malvern,Sep 2021,2021-09-01,450
+Malvern,Dec 2021,2021-12-01,450
+Malvern,Mar 2022,2022-03-01,460
+Malvern,Jun 2022,2022-06-01,450
+Malvern,Sep 2022,2022-09-01,460
+Malvern,Dec 2022,2022-12-01,475
+Malvern,Mar 2023,2023-03-01,500
+Malvern,Jun 2023,2023-06-01,548
+Malvern,Sep 2023,2023-09-01,585
+Malvern,Dec 2023,2023-12-01,585
+Malvern,Mar 2024,2024-03-01,580
+Malvern,Jun 2024,2024-06-01,580
+Malvern,Sep 2024,2024-09-01,585
+Malvern,Dec 2024,2024-12-01,600
+Malvern,Mar 2025,2025-03-01,600
+Malvern,Jun 2025,2025-06-01,635
+Malvern East,Mar 2020,2020-03-01,485
+Malvern East,Jun 2020,2020-06-01,480
+Malvern East,Sep 2020,2020-09-01,460
+Malvern East,Dec 2020,2020-12-01,450
+Malvern East,Mar 2021,2021-03-01,430
+Malvern East,Jun 2021,2021-06-01,410
+Malvern East,Sep 2021,2021-09-01,410
+Malvern East,Dec 2021,2021-12-01,400
+Malvern East,Mar 2022,2022-03-01,410
+Malvern East,Jun 2022,2022-06-01,430
+Malvern East,Sep 2022,2022-09-01,450
+Malvern East,Dec 2022,2022-12-01,460
+Malvern East,Mar 2023,2023-03-01,490
+Malvern East,Jun 2023,2023-06-01,500
+Malvern East,Sep 2023,2023-09-01,530
+Malvern East,Dec 2023,2023-12-01,550
+Malvern East,Mar 2024,2024-03-01,575
+Malvern East,Jun 2024,2024-06-01,580
+Malvern East,Sep 2024,2024-09-01,600
+Malvern East,Dec 2024,2024-12-01,600
+Malvern East,Mar 2025,2025-03-01,610
+Malvern East,Jun 2025,2025-06-01,610
+Melton,Mar 2020,2020-03-01,340
+Melton,Jun 2020,2020-06-01,345
+Melton,Sep 2020,2020-09-01,350
+Melton,Dec 2020,2020-12-01,350
+Melton,Mar 2021,2021-03-01,350
+Melton,Jun 2021,2021-06-01,350
+Melton,Sep 2021,2021-09-01,350
+Melton,Dec 2021,2021-12-01,350
+Melton,Mar 2022,2022-03-01,350
+Melton,Jun 2022,2022-06-01,350
+Melton,Sep 2022,2022-09-01,360
+Melton,Dec 2022,2022-12-01,360
+Melton,Mar 2023,2023-03-01,370
+Melton,Jun 2023,2023-06-01,380
+Melton,Sep 2023,2023-09-01,395
+Melton,Dec 2023,2023-12-01,410
+Melton,Mar 2024,2024-03-01,420
+Melton,Jun 2024,2024-06-01,430
+Melton,Sep 2024,2024-09-01,450
+Melton,Dec 2024,2024-12-01,450
+Melton,Mar 2025,2025-03-01,450
+Melton,Jun 2025,2025-06-01,450
+Mildura,Mar 2020,2020-03-01,310
+Mildura,Jun 2020,2020-06-01,310
+Mildura,Sep 2020,2020-09-01,310
+Mildura,Dec 2020,2020-12-01,320
+Mildura,Mar 2021,2021-03-01,320
+Mildura,Jun 2021,2021-06-01,330
+Mildura,Sep 2021,2021-09-01,340
+Mildura,Dec 2021,2021-12-01,340
+Mildura,Mar 2022,2022-03-01,340
+Mildura,Jun 2022,2022-06-01,340
+Mildura,Sep 2022,2022-09-01,350
+Mildura,Dec 2022,2022-12-01,350
+Mildura,Mar 2023,2023-03-01,360
+Mildura,Jun 2023,2023-06-01,370
+Mildura,Sep 2023,2023-09-01,380
+Mildura,Dec 2023,2023-12-01,380
+Mildura,Mar 2024,2024-03-01,395
+Mildura,Jun 2024,2024-06-01,395
+Mildura,Sep 2024,2024-09-01,410
+Mildura,Dec 2024,2024-12-01,430
+Mildura,Mar 2025,2025-03-01,450
+Mildura,Jun 2025,2025-06-01,450
+Morwell,Mar 2020,2020-03-01,225
+Morwell,Jun 2020,2020-06-01,230
+Morwell,Sep 2020,2020-09-01,230
+Morwell,Dec 2020,2020-12-01,230
+Morwell,Mar 2021,2021-03-01,240
+Morwell,Jun 2021,2021-06-01,250
+Morwell,Sep 2021,2021-09-01,250
+Morwell,Dec 2021,2021-12-01,268
+Morwell,Mar 2022,2022-03-01,280
+Morwell,Jun 2022,2022-06-01,290
+Morwell,Sep 2022,2022-09-01,300
+Morwell,Dec 2022,2022-12-01,300
+Morwell,Mar 2023,2023-03-01,320
+Morwell,Jun 2023,2023-06-01,330
+Morwell,Sep 2023,2023-09-01,340
+Morwell,Dec 2023,2023-12-01,340
+Morwell,Mar 2024,2024-03-01,340
+Morwell,Jun 2024,2024-06-01,350
+Morwell,Sep 2024,2024-09-01,350
+Morwell,Dec 2024,2024-12-01,350
+Morwell,Mar 2025,2025-03-01,360
+Morwell,Jun 2025,2025-06-01,380
+Mount Waverley,Mar 2020,2020-03-01,520
+Mount Waverley,Jun 2020,2020-06-01,510
+Mount Waverley,Sep 2020,2020-09-01,500
+Mount Waverley,Dec 2020,2020-12-01,500
+Mount Waverley,Mar 2021,2021-03-01,490
+Mount Waverley,Jun 2021,2021-06-01,500
+Mount Waverley,Sep 2021,2021-09-01,498
+Mount Waverley,Dec 2021,2021-12-01,500
+Mount Waverley,Mar 2022,2022-03-01,500
+Mount Waverley,Jun 2022,2022-06-01,500
+Mount Waverley,Sep 2022,2022-09-01,520
+Mount Waverley,Dec 2022,2022-12-01,530
+Mount Waverley,Mar 2023,2023-03-01,550
+Mount Waverley,Jun 2023,2023-06-01,570
+Mount Waverley,Sep 2023,2023-09-01,600
+Mount Waverley,Dec 2023,2023-12-01,600
+Mount Waverley,Mar 2024,2024-03-01,650
+Mount Waverley,Jun 2024,2024-06-01,650
+Mount Waverley,Sep 2024,2024-09-01,650
+Mount Waverley,Dec 2024,2024-12-01,660
+Mount Waverley,Mar 2025,2025-03-01,670
+Mount Waverley,Jun 2025,2025-06-01,670
+Noble Park,Mar 2020,2020-03-01,360
+Noble Park,Jun 2020,2020-06-01,360
+Noble Park,Sep 2020,2020-09-01,360
+Noble Park,Dec 2020,2020-12-01,360
+Noble Park,Mar 2021,2021-03-01,360
+Noble Park,Jun 2021,2021-06-01,360
+Noble Park,Sep 2021,2021-09-01,360
+Noble Park,Dec 2021,2021-12-01,360
+Noble Park,Mar 2022,2022-03-01,365
+Noble Park,Jun 2022,2022-06-01,375
+Noble Park,Sep 2022,2022-09-01,380
+Noble Park,Dec 2022,2022-12-01,380
+Noble Park,Mar 2023,2023-03-01,390
+Noble Park,Jun 2023,2023-06-01,400
+Noble Park,Sep 2023,2023-09-01,415
+Noble Park,Dec 2023,2023-12-01,440
+Noble Park,Mar 2024,2024-03-01,458
+Noble Park,Jun 2024,2024-06-01,480
+Noble Park,Sep 2024,2024-09-01,500
+Noble Park,Dec 2024,2024-12-01,500
+Noble Park,Mar 2025,2025-03-01,500
+Noble Park,Jun 2025,2025-06-01,515
+North Bendigo,Mar 2020,2020-03-01,310
+North Bendigo,Jun 2020,2020-06-01,315
+North Bendigo,Sep 2020,2020-09-01,320
+North Bendigo,Dec 2020,2020-12-01,330
+North Bendigo,Mar 2021,2021-03-01,330
+North Bendigo,Jun 2021,2021-06-01,345
+North Bendigo,Sep 2021,2021-09-01,350
+North Bendigo,Dec 2021,2021-12-01,360
+North Bendigo,Mar 2022,2022-03-01,380
+North Bendigo,Jun 2022,2022-06-01,380
+North Bendigo,Sep 2022,2022-09-01,390
+North Bendigo,Dec 2022,2022-12-01,400
+North Bendigo,Mar 2023,2023-03-01,405
+North Bendigo,Jun 2023,2023-06-01,420
+North Bendigo,Sep 2023,2023-09-01,430
+North Bendigo,Dec 2023,2023-12-01,440
+North Bendigo,Mar 2024,2024-03-01,430
+North Bendigo,Jun 2024,2024-06-01,440
+North Bendigo,Sep 2024,2024-09-01,450
+North Bendigo,Dec 2024,2024-12-01,450
+North Bendigo,Mar 2025,2025-03-01,460
+North Bendigo,Jun 2025,2025-06-01,470
+North Geelong,Mar 2020,2020-03-01,350
+North Geelong,Jun 2020,2020-06-01,350
+North Geelong,Sep 2020,2020-09-01,360
+North Geelong,Dec 2020,2020-12-01,360
+North Geelong,Mar 2021,2021-03-01,360
+North Geelong,Jun 2021,2021-06-01,373
+North Geelong,Sep 2021,2021-09-01,385
+North Geelong,Dec 2021,2021-12-01,390
+North Geelong,Mar 2022,2022-03-01,400
+North Geelong,Jun 2022,2022-06-01,400
+North Geelong,Sep 2022,2022-09-01,410
+North Geelong,Dec 2022,2022-12-01,420
+North Geelong,Mar 2023,2023-03-01,430
+North Geelong,Jun 2023,2023-06-01,440
+North Geelong,Sep 2023,2023-09-01,440
+North Geelong,Dec 2023,2023-12-01,450
+North Geelong,Mar 2024,2024-03-01,450
+North Geelong,Jun 2024,2024-06-01,450
+North Geelong,Sep 2024,2024-09-01,460
+North Geelong,Dec 2024,2024-12-01,470
+North Geelong,Mar 2025,2025-03-01,475
+North Geelong,Jun 2025,2025-06-01,480
+Northcote,Mar 2020,2020-03-01,500
+Northcote,Jun 2020,2020-06-01,500
+Northcote,Sep 2020,2020-09-01,500
+Northcote,Dec 2020,2020-12-01,500
+Northcote,Mar 2021,2021-03-01,500
+Northcote,Jun 2021,2021-06-01,490
+Northcote,Sep 2021,2021-09-01,495
+Northcote,Dec 2021,2021-12-01,490
+Northcote,Mar 2022,2022-03-01,490
+Northcote,Jun 2022,2022-06-01,490
+Northcote,Sep 2022,2022-09-01,480
+Northcote,Dec 2022,2022-12-01,500
+Northcote,Mar 2023,2023-03-01,515
+Northcote,Jun 2023,2023-06-01,530
+Northcote,Sep 2023,2023-09-01,550
+Northcote,Dec 2023,2023-12-01,580
+Northcote,Mar 2024,2024-03-01,598
+Northcote,Jun 2024,2024-06-01,600
+Northcote,Sep 2024,2024-09-01,615
+Northcote,Dec 2024,2024-12-01,625
+Northcote,Mar 2025,2025-03-01,640
+Northcote,Jun 2025,2025-06-01,640
+Pakenham,Mar 2020,2020-03-01,355
+Pakenham,Jun 2020,2020-06-01,350
+Pakenham,Sep 2020,2020-09-01,350
+Pakenham,Dec 2020,2020-12-01,360
+Pakenham,Mar 2021,2021-03-01,360
+Pakenham,Jun 2021,2021-06-01,365
+Pakenham,Sep 2021,2021-09-01,370
+Pakenham,Dec 2021,2021-12-01,375
+Pakenham,Mar 2022,2022-03-01,380
+Pakenham,Jun 2022,2022-06-01,390
+Pakenham,Sep 2022,2022-09-01,400
+Pakenham,Dec 2022,2022-12-01,410
+Pakenham,Mar 2023,2023-03-01,420
+Pakenham,Jun 2023,2023-06-01,435
+Pakenham,Sep 2023,2023-09-01,450
+Pakenham,Dec 2023,2023-12-01,470
+Pakenham,Mar 2024,2024-03-01,480
+Pakenham,Jun 2024,2024-06-01,500
+Pakenham,Sep 2024,2024-09-01,510
+Pakenham,Dec 2024,2024-12-01,520
+Pakenham,Mar 2025,2025-03-01,530
+Pakenham,Jun 2025,2025-06-01,540
+Port Melbourne,Mar 2020,2020-03-01,630
+Port Melbourne,Jun 2020,2020-06-01,600
+Port Melbourne,Sep 2020,2020-09-01,590
+Port Melbourne,Dec 2020,2020-12-01,590
+Port Melbourne,Mar 2021,2021-03-01,575
+Port Melbourne,Jun 2021,2021-06-01,590
+Port Melbourne,Sep 2021,2021-09-01,595
+Port Melbourne,Dec 2021,2021-12-01,595
+Port Melbourne,Mar 2022,2022-03-01,600
+Port Melbourne,Jun 2022,2022-06-01,600
+Port Melbourne,Sep 2022,2022-09-01,600
+Port Melbourne,Dec 2022,2022-12-01,623
+Port Melbourne,Mar 2023,2023-03-01,650
+Port Melbourne,Jun 2023,2023-06-01,650
+Port Melbourne,Sep 2023,2023-09-01,675
+Port Melbourne,Dec 2023,2023-12-01,675
+Port Melbourne,Mar 2024,2024-03-01,695
+Port Melbourne,Jun 2024,2024-06-01,700
+Port Melbourne,Sep 2024,2024-09-01,700
+Port Melbourne,Dec 2024,2024-12-01,735
+Port Melbourne,Mar 2025,2025-03-01,750
+Port Melbourne,Jun 2025,2025-06-01,770
+Portland,Mar 2020,2020-03-01,290
+Portland,Jun 2020,2020-06-01,300
+Portland,Sep 2020,2020-09-01,300
+Portland,Dec 2020,2020-12-01,310
+Portland,Mar 2021,2021-03-01,320
+Portland,Jun 2021,2021-06-01,350
+Portland,Sep 2021,2021-09-01,350
+Portland,Dec 2021,2021-12-01,350
+Portland,Mar 2022,2022-03-01,350
+Portland,Jun 2022,2022-06-01,350
+Portland,Sep 2022,2022-09-01,360
+Portland,Dec 2022,2022-12-01,370
+Portland,Mar 2023,2023-03-01,380
+Portland,Jun 2023,2023-06-01,400
+Portland,Sep 2023,2023-09-01,400
+Portland,Dec 2023,2023-12-01,400
+Portland,Mar 2024,2024-03-01,400
+Portland,Jun 2024,2024-06-01,400
+Portland,Sep 2024,2024-09-01,400
+Portland,Dec 2024,2024-12-01,400
+Portland,Mar 2025,2025-03-01,400
+Portland,Jun 2025,2025-06-01,410
+Preston,Mar 2020,2020-03-01,425
+Preston,Jun 2020,2020-06-01,420
+Preston,Sep 2020,2020-09-01,425
+Preston,Dec 2020,2020-12-01,420
+Preston,Mar 2021,2021-03-01,420
+Preston,Jun 2021,2021-06-01,410
+Preston,Sep 2021,2021-09-01,400
+Preston,Dec 2021,2021-12-01,400
+Preston,Mar 2022,2022-03-01,400
+Preston,Jun 2022,2022-06-01,410
+Preston,Sep 2022,2022-09-01,420
+Preston,Dec 2022,2022-12-01,430
+Preston,Mar 2023,2023-03-01,450
+Preston,Jun 2023,2023-06-01,460
+Preston,Sep 2023,2023-09-01,480
+Preston,Dec 2023,2023-12-01,500
+Preston,Mar 2024,2024-03-01,500
+Preston,Jun 2024,2024-06-01,500
+Preston,Sep 2024,2024-09-01,520
+Preston,Dec 2024,2024-12-01,530
+Preston,Mar 2025,2025-03-01,550
+Preston,Jun 2025,2025-06-01,550
+Reservoir,Mar 2020,2020-03-01,380
+Reservoir,Jun 2020,2020-06-01,380
+Reservoir,Sep 2020,2020-09-01,385
+Reservoir,Dec 2020,2020-12-01,385
+Reservoir,Mar 2021,2021-03-01,380
+Reservoir,Jun 2021,2021-06-01,380
+Reservoir,Sep 2021,2021-09-01,380
+Reservoir,Dec 2021,2021-12-01,380
+Reservoir,Mar 2022,2022-03-01,380
+Reservoir,Jun 2022,2022-06-01,380
+Reservoir,Sep 2022,2022-09-01,390
+Reservoir,Dec 2022,2022-12-01,400
+Reservoir,Mar 2023,2023-03-01,405
+Reservoir,Jun 2023,2023-06-01,420
+Reservoir,Sep 2023,2023-09-01,430
+Reservoir,Dec 2023,2023-12-01,450
+Reservoir,Mar 2024,2024-03-01,470
+Reservoir,Jun 2024,2024-06-01,480
+Reservoir,Sep 2024,2024-09-01,500
+Reservoir,Dec 2024,2024-12-01,500
+Reservoir,Mar 2025,2025-03-01,520
+Reservoir,Jun 2025,2025-06-01,525
+Ringwood,Mar 2020,2020-03-01,410
+Ringwood,Jun 2020,2020-06-01,410
+Ringwood,Sep 2020,2020-09-01,415
+Ringwood,Dec 2020,2020-12-01,415
+Ringwood,Mar 2021,2021-03-01,410
+Ringwood,Jun 2021,2021-06-01,410
+Ringwood,Sep 2021,2021-09-01,410
+Ringwood,Dec 2021,2021-12-01,410
+Ringwood,Mar 2022,2022-03-01,420
+Ringwood,Jun 2022,2022-06-01,420
+Ringwood,Sep 2022,2022-09-01,430
+Ringwood,Dec 2022,2022-12-01,440
+Ringwood,Mar 2023,2023-03-01,450
+Ringwood,Jun 2023,2023-06-01,460
+Ringwood,Sep 2023,2023-09-01,470
+Ringwood,Dec 2023,2023-12-01,490
+Ringwood,Mar 2024,2024-03-01,500
+Ringwood,Jun 2024,2024-06-01,520
+Ringwood,Sep 2024,2024-09-01,549
+Ringwood,Dec 2024,2024-12-01,550
+Ringwood,Mar 2025,2025-03-01,550
+Ringwood,Jun 2025,2025-06-01,555
+Rowville,Mar 2020,2020-03-01,450
+Rowville,Jun 2020,2020-06-01,450
+Rowville,Sep 2020,2020-09-01,450
+Rowville,Dec 2020,2020-12-01,460
+Rowville,Mar 2021,2021-03-01,460
+Rowville,Jun 2021,2021-06-01,460
+Rowville,Sep 2021,2021-09-01,470
+Rowville,Dec 2021,2021-12-01,470
+Rowville,Mar 2022,2022-03-01,480
+Rowville,Jun 2022,2022-06-01,490
+Rowville,Sep 2022,2022-09-01,500
+Rowville,Dec 2022,2022-12-01,505
+Rowville,Mar 2023,2023-03-01,510
+Rowville,Jun 2023,2023-06-01,530
+Rowville,Sep 2023,2023-09-01,550
+Rowville,Dec 2023,2023-12-01,550
+Rowville,Mar 2024,2024-03-01,580
+Rowville,Jun 2024,2024-06-01,590
+Rowville,Sep 2024,2024-09-01,600
+Rowville,Dec 2024,2024-12-01,640
+Rowville,Mar 2025,2025-03-01,650
+Rowville,Jun 2025,2025-06-01,650
+Seymour,Mar 2020,2020-03-01,295
+Seymour,Jun 2020,2020-06-01,300
+Seymour,Sep 2020,2020-09-01,300
+Seymour,Dec 2020,2020-12-01,300
+Seymour,Mar 2021,2021-03-01,300
+Seymour,Jun 2021,2021-06-01,300
+Seymour,Sep 2021,2021-09-01,305
+Seymour,Dec 2021,2021-12-01,320
+Seymour,Mar 2022,2022-03-01,331
+Seymour,Jun 2022,2022-06-01,350
+Seymour,Sep 2022,2022-09-01,355
+Seymour,Dec 2022,2022-12-01,360
+Seymour,Mar 2023,2023-03-01,370
+Seymour,Jun 2023,2023-06-01,370
+Seymour,Sep 2023,2023-09-01,380
+Seymour,Dec 2023,2023-12-01,380
+Seymour,Mar 2024,2024-03-01,390
+Seymour,Jun 2024,2024-06-01,395
+Seymour,Sep 2024,2024-09-01,400
+Seymour,Dec 2024,2024-12-01,400
+Seymour,Mar 2025,2025-03-01,400
+Seymour,Jun 2025,2025-06-01,400
+Shepparton,Mar 2020,2020-03-01,290
+Shepparton,Jun 2020,2020-06-01,290
+Shepparton,Sep 2020,2020-09-01,300
+Shepparton,Dec 2020,2020-12-01,300
+Shepparton,Mar 2021,2021-03-01,300
+Shepparton,Jun 2021,2021-06-01,310
+Shepparton,Sep 2021,2021-09-01,320
+Shepparton,Dec 2021,2021-12-01,330
+Shepparton,Mar 2022,2022-03-01,330
+Shepparton,Jun 2022,2022-06-01,350
+Shepparton,Sep 2022,2022-09-01,350
+Shepparton,Dec 2022,2022-12-01,360
+Shepparton,Mar 2023,2023-03-01,375
+Shepparton,Jun 2023,2023-06-01,385
+Shepparton,Sep 2023,2023-09-01,390
+Shepparton,Dec 2023,2023-12-01,390
+Shepparton,Mar 2024,2024-03-01,400
+Shepparton,Jun 2024,2024-06-01,410
+Shepparton,Sep 2024,2024-09-01,420
+Shepparton,Dec 2024,2024-12-01,440
+Shepparton,Mar 2025,2025-03-01,450
+Shepparton,Jun 2025,2025-06-01,450
+South Melbourne,Mar 2020,2020-03-01,550
+South Melbourne,Jun 2020,2020-06-01,530
+South Melbourne,Sep 2020,2020-09-01,513
+South Melbourne,Dec 2020,2020-12-01,490
+South Melbourne,Mar 2021,2021-03-01,450
+South Melbourne,Jun 2021,2021-06-01,430
+South Melbourne,Sep 2021,2021-09-01,430
+South Melbourne,Dec 2021,2021-12-01,435
+South Melbourne,Mar 2022,2022-03-01,450
+South Melbourne,Jun 2022,2022-06-01,460
+South Melbourne,Sep 2022,2022-09-01,480
+South Melbourne,Dec 2022,2022-12-01,500
+South Melbourne,Mar 2023,2023-03-01,545
+South Melbourne,Jun 2023,2023-06-01,560
+South Melbourne,Sep 2023,2023-09-01,580
+South Melbourne,Dec 2023,2023-12-01,600
+South Melbourne,Mar 2024,2024-03-01,620
+South Melbourne,Jun 2024,2024-06-01,625
+South Melbourne,Sep 2024,2024-09-01,640
+South Melbourne,Dec 2024,2024-12-01,640
+South Melbourne,Mar 2025,2025-03-01,650
+South Melbourne,Jun 2025,2025-06-01,650
+South Yarra,Mar 2020,2020-03-01,500
+South Yarra,Jun 2020,2020-06-01,491
+South Yarra,Sep 2020,2020-09-01,480
+South Yarra,Dec 2020,2020-12-01,450
+South Yarra,Mar 2021,2021-03-01,425
+South Yarra,Jun 2021,2021-06-01,410
+South Yarra,Sep 2021,2021-09-01,400
+South Yarra,Dec 2021,2021-12-01,400
+South Yarra,Mar 2022,2022-03-01,400
+South Yarra,Jun 2022,2022-06-01,420
+South Yarra,Sep 2022,2022-09-01,440
+South Yarra,Dec 2022,2022-12-01,450
+South Yarra,Mar 2023,2023-03-01,490
+South Yarra,Jun 2023,2023-06-01,513
+South Yarra,Sep 2023,2023-09-01,550
+South Yarra,Dec 2023,2023-12-01,565
+South Yarra,Mar 2024,2024-03-01,580
+South Yarra,Jun 2024,2024-06-01,600
+South Yarra,Sep 2024,2024-09-01,600
+South Yarra,Dec 2024,2024-12-01,600
+South Yarra,Mar 2025,2025-03-01,600
+South Yarra,Jun 2025,2025-06-01,600
+Springvale,Mar 2020,2020-03-01,395
+Springvale,Jun 2020,2020-06-01,400
+Springvale,Sep 2020,2020-09-01,400
+Springvale,Dec 2020,2020-12-01,392
+Springvale,Mar 2021,2021-03-01,390
+Springvale,Jun 2021,2021-06-01,390
+Springvale,Sep 2021,2021-09-01,390
+Springvale,Dec 2021,2021-12-01,390
+Springvale,Mar 2022,2022-03-01,395
+Springvale,Jun 2022,2022-06-01,400
+Springvale,Sep 2022,2022-09-01,400
+Springvale,Dec 2022,2022-12-01,420
+Springvale,Mar 2023,2023-03-01,430
+Springvale,Jun 2023,2023-06-01,450
+Springvale,Sep 2023,2023-09-01,460
+Springvale,Dec 2023,2023-12-01,485
+Springvale,Mar 2024,2024-03-01,508
+Springvale,Jun 2024,2024-06-01,530
+Springvale,Sep 2024,2024-09-01,550
+Springvale,Dec 2024,2024-12-01,550
+Springvale,Mar 2025,2025-03-01,550
+Springvale,Jun 2025,2025-06-01,550
+St Kilda,Mar 2020,2020-03-01,430
+St Kilda,Jun 2020,2020-06-01,430
+St Kilda,Sep 2020,2020-09-01,420
+St Kilda,Dec 2020,2020-12-01,400
+St Kilda,Mar 2021,2021-03-01,390
+St Kilda,Jun 2021,2021-06-01,380
+St Kilda,Sep 2021,2021-09-01,375
+St Kilda,Dec 2021,2021-12-01,370
+St Kilda,Mar 2022,2022-03-01,370
+St Kilda,Jun 2022,2022-06-01,380
+St Kilda,Sep 2022,2022-09-01,395
+St Kilda,Dec 2022,2022-12-01,400
+St Kilda,Mar 2023,2023-03-01,420
+St Kilda,Jun 2023,2023-06-01,450
+St Kilda,Sep 2023,2023-09-01,460
+St Kilda,Dec 2023,2023-12-01,481
+St Kilda,Mar 2024,2024-03-01,500
+St Kilda,Jun 2024,2024-06-01,520
+St Kilda,Sep 2024,2024-09-01,540
+St Kilda,Dec 2024,2024-12-01,550
+St Kilda,Mar 2025,2025-03-01,550
+St Kilda,Jun 2025,2025-06-01,560
+Sunbury,Mar 2020,2020-03-01,375
+Sunbury,Jun 2020,2020-06-01,370
+Sunbury,Sep 2020,2020-09-01,370
+Sunbury,Dec 2020,2020-12-01,380
+Sunbury,Mar 2021,2021-03-01,380
+Sunbury,Jun 2021,2021-06-01,380
+Sunbury,Sep 2021,2021-09-01,390
+Sunbury,Dec 2021,2021-12-01,390
+Sunbury,Mar 2022,2022-03-01,390
+Sunbury,Jun 2022,2022-06-01,400
+Sunbury,Sep 2022,2022-09-01,400
+Sunbury,Dec 2022,2022-12-01,410
+Sunbury,Mar 2023,2023-03-01,420
+Sunbury,Jun 2023,2023-06-01,425
+Sunbury,Sep 2023,2023-09-01,440
+Sunbury,Dec 2023,2023-12-01,450
+Sunbury,Mar 2024,2024-03-01,470
+Sunbury,Jun 2024,2024-06-01,480
+Sunbury,Sep 2024,2024-09-01,490
+Sunbury,Dec 2024,2024-12-01,495
+Sunbury,Mar 2025,2025-03-01,500
+Sunbury,Jun 2025,2025-06-01,520
+Sunshine,Mar 2020,2020-03-01,360
+Sunshine,Jun 2020,2020-06-01,360
+Sunshine,Sep 2020,2020-09-01,360
+Sunshine,Dec 2020,2020-12-01,360
+Sunshine,Mar 2021,2021-03-01,350
+Sunshine,Jun 2021,2021-06-01,350
+Sunshine,Sep 2021,2021-09-01,350
+Sunshine,Dec 2021,2021-12-01,350
+Sunshine,Mar 2022,2022-03-01,350
+Sunshine,Jun 2022,2022-06-01,360
+Sunshine,Sep 2022,2022-09-01,360
+Sunshine,Dec 2022,2022-12-01,370
+Sunshine,Mar 2023,2023-03-01,370
+Sunshine,Jun 2023,2023-06-01,380
+Sunshine,Sep 2023,2023-09-01,400
+Sunshine,Dec 2023,2023-12-01,420
+Sunshine,Mar 2024,2024-03-01,430
+Sunshine,Jun 2024,2024-06-01,450
+Sunshine,Sep 2024,2024-09-01,450
+Sunshine,Dec 2024,2024-12-01,460
+Sunshine,Mar 2025,2025-03-01,480
+Sunshine,Jun 2025,2025-06-01,485
+Swan Hill,Mar 2020,2020-03-01,260
+Swan Hill,Jun 2020,2020-06-01,270
+Swan Hill,Sep 2020,2020-09-01,280
+Swan Hill,Dec 2020,2020-12-01,280
+Swan Hill,Mar 2021,2021-03-01,295
+Swan Hill,Jun 2021,2021-06-01,300
+Swan Hill,Sep 2021,2021-09-01,300
+Swan Hill,Dec 2021,2021-12-01,300
+Swan Hill,Mar 2022,2022-03-01,300
+Swan Hill,Jun 2022,2022-06-01,300
+Swan Hill,Sep 2022,2022-09-01,310
+Swan Hill,Dec 2022,2022-12-01,310
+Swan Hill,Mar 2023,2023-03-01,320
+Swan Hill,Jun 2023,2023-06-01,320
+Swan Hill,Sep 2023,2023-09-01,340
+Swan Hill,Dec 2023,2023-12-01,350
+Swan Hill,Mar 2024,2024-03-01,370
+Swan Hill,Jun 2024,2024-06-01,370
+Swan Hill,Sep 2024,2024-09-01,370
+Swan Hill,Dec 2024,2024-12-01,370
+Swan Hill,Mar 2025,2025-03-01,400
+Swan Hill,Jun 2025,2025-06-01,400
+Sydenham,Mar 2020,2020-03-01,400
+Sydenham,Jun 2020,2020-06-01,400
+Sydenham,Sep 2020,2020-09-01,400
+Sydenham,Dec 2020,2020-12-01,400
+Sydenham,Mar 2021,2021-03-01,400
+Sydenham,Jun 2021,2021-06-01,400
+Sydenham,Sep 2021,2021-09-01,400
+Sydenham,Dec 2021,2021-12-01,400
+Sydenham,Mar 2022,2022-03-01,400
+Sydenham,Jun 2022,2022-06-01,410
+Sydenham,Sep 2022,2022-09-01,415
+Sydenham,Dec 2022,2022-12-01,420
+Sydenham,Mar 2023,2023-03-01,420
+Sydenham,Jun 2023,2023-06-01,430
+Sydenham,Sep 2023,2023-09-01,450
+Sydenham,Dec 2023,2023-12-01,450
+Sydenham,Mar 2024,2024-03-01,470
+Sydenham,Jun 2024,2024-06-01,480
+Sydenham,Sep 2024,2024-09-01,500
+Sydenham,Dec 2024,2024-12-01,500
+Sydenham,Mar 2025,2025-03-01,500
+Sydenham,Jun 2025,2025-06-01,500
+Thornbury,Mar 2020,2020-03-01,430
+Thornbury,Jun 2020,2020-06-01,420
+Thornbury,Sep 2020,2020-09-01,420
+Thornbury,Dec 2020,2020-12-01,420
+Thornbury,Mar 2021,2021-03-01,410
+Thornbury,Jun 2021,2021-06-01,400
+Thornbury,Sep 2021,2021-09-01,400
+Thornbury,Dec 2021,2021-12-01,400
+Thornbury,Mar 2022,2022-03-01,400
+Thornbury,Jun 2022,2022-06-01,400
+Thornbury,Sep 2022,2022-09-01,400
+Thornbury,Dec 2022,2022-12-01,410
+Thornbury,Mar 2023,2023-03-01,430
+Thornbury,Jun 2023,2023-06-01,450
+Thornbury,Sep 2023,2023-09-01,473
+Thornbury,Dec 2023,2023-12-01,500
+Thornbury,Mar 2024,2024-03-01,500
+Thornbury,Jun 2024,2024-06-01,500
+Thornbury,Sep 2024,2024-09-01,515
+Thornbury,Dec 2024,2024-12-01,520
+Thornbury,Mar 2025,2025-03-01,548
+Thornbury,Jun 2025,2025-06-01,525
+Toorak,Mar 2020,2020-03-01,520
+Toorak,Jun 2020,2020-06-01,525
+Toorak,Sep 2020,2020-09-01,540
+Toorak,Dec 2020,2020-12-01,520
+Toorak,Mar 2021,2021-03-01,515
+Toorak,Jun 2021,2021-06-01,500
+Toorak,Sep 2021,2021-09-01,500
+Toorak,Dec 2021,2021-12-01,500
+Toorak,Mar 2022,2022-03-01,500
+Toorak,Jun 2022,2022-06-01,513
+Toorak,Sep 2022,2022-09-01,500
+Toorak,Dec 2022,2022-12-01,530
+Toorak,Mar 2023,2023-03-01,550
+Toorak,Jun 2023,2023-06-01,573
+Toorak,Sep 2023,2023-09-01,595
+Toorak,Dec 2023,2023-12-01,600
+Toorak,Mar 2024,2024-03-01,630
+Toorak,Jun 2024,2024-06-01,650
+Toorak,Sep 2024,2024-09-01,670
+Toorak,Dec 2024,2024-12-01,660
+Toorak,Mar 2025,2025-03-01,650
+Toorak,Jun 2025,2025-06-01,650
+Torquay,Mar 2020,2020-03-01,500
+Torquay,Jun 2020,2020-06-01,500
+Torquay,Sep 2020,2020-09-01,500
+Torquay,Dec 2020,2020-12-01,510
+Torquay,Mar 2021,2021-03-01,520
+Torquay,Jun 2021,2021-06-01,550
+Torquay,Sep 2021,2021-09-01,550
+Torquay,Dec 2021,2021-12-01,570
+Torquay,Mar 2022,2022-03-01,580
+Torquay,Jun 2022,2022-06-01,600
+Torquay,Sep 2022,2022-09-01,600
+Torquay,Dec 2022,2022-12-01,600
+Torquay,Mar 2023,2023-03-01,620
+Torquay,Jun 2023,2023-06-01,615
+Torquay,Sep 2023,2023-09-01,625
+Torquay,Dec 2023,2023-12-01,628
+Torquay,Mar 2024,2024-03-01,630
+Torquay,Jun 2024,2024-06-01,650
+Torquay,Sep 2024,2024-09-01,650
+Torquay,Dec 2024,2024-12-01,650
+Torquay,Mar 2025,2025-03-01,650
+Torquay,Jun 2025,2025-06-01,660
+Traralgon,Mar 2020,2020-03-01,300
+Traralgon,Jun 2020,2020-06-01,300
+Traralgon,Sep 2020,2020-09-01,310
+Traralgon,Dec 2020,2020-12-01,320
+Traralgon,Mar 2021,2021-03-01,330
+Traralgon,Jun 2021,2021-06-01,340
+Traralgon,Sep 2021,2021-09-01,350
+Traralgon,Dec 2021,2021-12-01,360
+Traralgon,Mar 2022,2022-03-01,360
+Traralgon,Jun 2022,2022-06-01,379
+Traralgon,Sep 2022,2022-09-01,380
+Traralgon,Dec 2022,2022-12-01,380
+Traralgon,Mar 2023,2023-03-01,385
+Traralgon,Jun 2023,2023-06-01,390
+Traralgon,Sep 2023,2023-09-01,390
+Traralgon,Dec 2023,2023-12-01,395
+Traralgon,Mar 2024,2024-03-01,410
+Traralgon,Jun 2024,2024-06-01,420
+Traralgon,Sep 2024,2024-09-01,430
+Traralgon,Dec 2024,2024-12-01,430
+Traralgon,Mar 2025,2025-03-01,440
+Traralgon,Jun 2025,2025-06-01,440
+West Footscray,Mar 2020,2020-03-01,400
+West Footscray,Jun 2020,2020-06-01,410
+West Footscray,Sep 2020,2020-09-01,400
+West Footscray,Dec 2020,2020-12-01,400
+West Footscray,Mar 2021,2021-03-01,400
+West Footscray,Jun 2021,2021-06-01,395
+West Footscray,Sep 2021,2021-09-01,395
+West Footscray,Dec 2021,2021-12-01,390
+West Footscray,Mar 2022,2022-03-01,395
+West Footscray,Jun 2022,2022-06-01,400
+West Footscray,Sep 2022,2022-09-01,405
+West Footscray,Dec 2022,2022-12-01,410
+West Footscray,Mar 2023,2023-03-01,420
+West Footscray,Jun 2023,2023-06-01,430
+West Footscray,Sep 2023,2023-09-01,450
+West Footscray,Dec 2023,2023-12-01,470
+West Footscray,Mar 2024,2024-03-01,490
+West Footscray,Jun 2024,2024-06-01,500
+West Footscray,Sep 2024,2024-09-01,520
+West Footscray,Dec 2024,2024-12-01,530
+West Footscray,Mar 2025,2025-03-01,540
+West Footscray,Jun 2025,2025-06-01,550
+Whittlesea,Mar 2020,2020-03-01,390
+Whittlesea,Jun 2020,2020-06-01,390
+Whittlesea,Sep 2020,2020-09-01,390
+Whittlesea,Dec 2020,2020-12-01,390
+Whittlesea,Mar 2021,2021-03-01,390
+Whittlesea,Jun 2021,2021-06-01,390
+Whittlesea,Sep 2021,2021-09-01,390
+Whittlesea,Dec 2021,2021-12-01,400
+Whittlesea,Mar 2022,2022-03-01,400
+Whittlesea,Jun 2022,2022-06-01,410
+Whittlesea,Sep 2022,2022-09-01,420
+Whittlesea,Dec 2022,2022-12-01,430
+Whittlesea,Mar 2023,2023-03-01,440
+Whittlesea,Jun 2023,2023-06-01,450
+Whittlesea,Sep 2023,2023-09-01,465
+Whittlesea,Dec 2023,2023-12-01,480
+Whittlesea,Mar 2024,2024-03-01,500
+Whittlesea,Jun 2024,2024-06-01,520
+Whittlesea,Sep 2024,2024-09-01,530
+Whittlesea,Dec 2024,2024-12-01,540
+Whittlesea,Mar 2025,2025-03-01,540
+Whittlesea,Jun 2025,2025-06-01,540
+Williamstown,Mar 2020,2020-03-01,530
+Williamstown,Jun 2020,2020-06-01,530
+Williamstown,Sep 2020,2020-09-01,520
+Williamstown,Dec 2020,2020-12-01,520
+Williamstown,Mar 2021,2021-03-01,500
+Williamstown,Jun 2021,2021-06-01,500
+Williamstown,Sep 2021,2021-09-01,520
+Williamstown,Dec 2021,2021-12-01,510
+Williamstown,Mar 2022,2022-03-01,520
+Williamstown,Jun 2022,2022-06-01,520
+Williamstown,Sep 2022,2022-09-01,520
+Williamstown,Dec 2022,2022-12-01,540
+Williamstown,Mar 2023,2023-03-01,550
+Williamstown,Jun 2023,2023-06-01,575
+Williamstown,Sep 2023,2023-09-01,600
+Williamstown,Dec 2023,2023-12-01,595
+Williamstown,Mar 2024,2024-03-01,620
+Williamstown,Jun 2024,2024-06-01,620
+Williamstown,Sep 2024,2024-09-01,630
+Williamstown,Dec 2024,2024-12-01,650
+Williamstown,Mar 2025,2025-03-01,650
+Williamstown,Jun 2025,2025-06-01,650
+Wodonga,Mar 2020,2020-03-01,330
+Wodonga,Jun 2020,2020-06-01,330
+Wodonga,Sep 2020,2020-09-01,330
+Wodonga,Dec 2020,2020-12-01,330
+Wodonga,Mar 2021,2021-03-01,340
+Wodonga,Jun 2021,2021-06-01,350
+Wodonga,Sep 2021,2021-09-01,360
+Wodonga,Dec 2021,2021-12-01,370
+Wodonga,Mar 2022,2022-03-01,380
+Wodonga,Jun 2022,2022-06-01,390
+Wodonga,Sep 2022,2022-09-01,400
+Wodonga,Dec 2022,2022-12-01,410
+Wodonga,Mar 2023,2023-03-01,410
+Wodonga,Jun 2023,2023-06-01,420
+Wodonga,Sep 2023,2023-09-01,420
+Wodonga,Dec 2023,2023-12-01,430
+Wodonga,Mar 2024,2024-03-01,440
+Wodonga,Jun 2024,2024-06-01,450
+Wodonga,Sep 2024,2024-09-01,450
+Wodonga,Dec 2024,2024-12-01,460
+Wodonga,Mar 2025,2025-03-01,480
+Wodonga,Jun 2025,2025-06-01,480

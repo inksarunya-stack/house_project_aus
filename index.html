@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Australian Housing: Buy vs Rent Analytics</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<style>
+  :root {
+    --bg: #f2f3f6; --sidebar-bg: #171a26; --card-bg: #232637; --card-bg-2: #262a3d;
+    --border: #2f3349; --teal: #2dd4a7; --teal-dim: rgba(45,212,167,0.15);
+    --red: #f2555a; --red-dim: rgba(242,85,90,0.15); --yellow: #f2b84b; --blue: #5b8def;
+    --text: #f2f3f5; --text-dim: #9aa0b4; --text-faint: #6b7086;
+    --ink: #262a3d; --ink-dim: #62677d; --ink-faint: #9297a8;
+    --light-border: #dcdfe6; --table-bg: #f7f8fa; --table-bg-alt: #edeff3;
+  }
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; background: var(--bg); color: var(--ink); margin: 0; display: flex; min-height: 100vh; }
+
+  .sidebar { width: 280px; flex-shrink: 0; background: var(--sidebar-bg); color: var(--text); border-right: 1px solid var(--border); padding: 24px 18px; display: flex; flex-direction: column; gap: 20px; overflow-y: auto; max-height: 100vh; }
+  .brand { display: flex; align-items: center; gap: 10px; padding: 0 4px 10px; }
+  .brand-icon { width: 32px; height: 32px; border-radius: 9px; background: linear-gradient(135deg, var(--teal), #1fa583); display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+  .brand-name { font-size: 16px; font-weight: 700; letter-spacing: 0.3px; }
+
+  .filter-block { display: flex; flex-direction: column; gap: 8px; }
+  .filter-block label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.6px; color: var(--text-faint); padding: 0 2px; }
+  .filter-block input, .filter-block select { background: var(--card-bg); border: 1px solid var(--border); color: var(--text); border-radius: 9px; padding: 10px 12px; font-size: 13.5px; outline: none; width: 100%; }
+  .filter-block input::placeholder { color: var(--text-faint); }
+  .filter-block select { appearance: none; cursor: pointer; }
+  .filter-block input:focus, .filter-block select:focus { border-color: var(--teal); }
+
+  .sidebar-divider { height: 1px; background: var(--border); margin: 4px 0; flex-shrink: 0; }
+  .result-count-box { background: var(--teal-dim); border: 1px solid rgba(45,212,167,0.3); border-radius: 10px; padding: 12px 14px; font-size: 12.5px; color: var(--teal); font-weight: 600; line-height: 1.5; }
+  .sidebar-legend { font-size: 11.5px; color: var(--text-dim); line-height: 2; padding: 0 4px; }
+  .legend-swatch { display:inline-block; width:9px; height:9px; border-radius:3px; margin-right:6px; }
+
+  .sidebar-nav-title { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.6px; color: var(--text-faint); padding: 0 6px; }
+  .sidebar-nav { display: flex; flex-direction: column; gap: 3px; }
+  .sidebar-nav-item { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 10px; cursor: pointer; font-size: 13px; color: var(--text-dim); border: 1px solid transparent; }
+  .sidebar-nav-item:hover { background: var(--card-bg); color: var(--text); }
+  .sidebar-nav-item .nav-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--text-faint); flex-shrink: 0; }
+  .sidebar-nav-item:hover .nav-dot { background: var(--teal); }
+  .sidebar-nav-item .nav-arrow { margin-left: auto; opacity: 0; font-size: 12px; }
+  .sidebar-nav-item:hover .nav-arrow { opacity: 1; color: var(--teal); }
+
+  .drop-zone { border: 1.5px dashed var(--border); border-radius: 12px; padding: 16px 12px; text-align: center; cursor: pointer; background: var(--card-bg); transition: border-color .15s, background .15s; }
+  .drop-zone:hover, .drop-zone.dragover { border-color: var(--teal); background: var(--teal-dim); }
+  .drop-zone-icon { font-size: 18px; margin-bottom: 4px; color: var(--teal); }
+  .drop-zone-text { font-size: 12px; color: var(--text-dim); line-height: 1.5; }
+  .drop-zone-text strong { color: var(--text); }
+  .upload-hint { font-size: 10.5px; color: var(--text-faint); line-height: 1.55; padding: 0 2px; }
+  .upload-status { font-size: 11.5px; line-height: 1.55; padding: 0 2px; min-height: 1px; }
+  .upload-status.ok { color: var(--teal); }
+  .upload-status.err { color: var(--red); }
+  .uploaded-chip-list { display: flex; flex-direction: column; gap: 6px; }
+  .uploaded-chip { display: flex; align-items: center; justify-content: space-between; gap: 8px; background: var(--card-bg-2); border: 1px solid var(--border); border-radius: 8px; padding: 7px 10px; font-size: 11.5px; color: var(--text-dim); }
+  .uploaded-chip button { background: none; border: none; color: var(--text-faint); cursor: pointer; font-size: 15px; line-height: 1; padding: 0 2px; }
+  .uploaded-chip button:hover { color: var(--red); }
+
+  .main { flex: 1; padding: 26px 32px; min-width: 0; }
+  .main-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; gap: 16px; }
+  .main-header h1 { font-size: 26px; font-weight: 700; margin: 0; color: var(--ink); }
+  .main-header .subtitle { font-size: 13px; color: var(--ink-dim); margin-top: 4px; }
+  .header-badge { background: var(--card-bg); border: 1px solid var(--border); border-radius: 20px; padding: 8px 16px; font-size: 12.5px; color: var(--text-dim); display:flex; align-items:center; gap:8px; white-space: nowrap; }
+  .avatar { width: 26px; height: 26px; border-radius: 50%; background: linear-gradient(135deg,var(--blue),#3355bb); flex-shrink: 0; }
+
+  .kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 22px; }
+  .kpi-grid-3 { grid-template-columns: repeat(3, 1fr); }
+  .kpi-card { background: var(--card-bg); color: var(--text); border: 1px solid var(--border); border-radius: 16px; padding: 18px 20px; }
+  .kpi-label { font-size: 12px; color: var(--text-dim); margin-bottom: 8px; }
+  .kpi-value { font-size: 26px; font-weight: 700; color: var(--text); font-variant-numeric: tabular-nums; }
+  .kpi-value.teal { color: var(--teal); }
+
+  .panel { background: var(--card-bg); color: var(--text); border: 1px solid var(--border); border-radius: 16px; padding: 20px 22px; margin-bottom: 18px; }
+  .panel-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px; }
+  .panel-title { font-size: 14.5px; font-weight: 700; color: var(--text); }
+  .panel-subtitle { font-size: 12px; color: var(--text-dim); margin-bottom: 14px; }
+  .panel-tag { background: var(--card-bg-2); border: 1px solid var(--border); border-radius: 14px; padding: 4px 12px; font-size: 11px; color: var(--text-dim); cursor: pointer; }
+  .panel-clickable { cursor: pointer; transition: border-color 0.15s, transform 0.1s; }
+  .panel-clickable:hover { border-color: var(--teal); }
+  .panel-clickable:active { transform: scale(0.995); }
+  .panel-tag:hover { border-color: var(--teal); color: var(--teal); }
+
+  .two-col { display: flex; gap: 18px; } .two-col > .panel { flex: 1; min-width: 0; margin-bottom: 0; }
+  .three-col { display: flex; gap: 16px; } .three-col > .panel { flex: 1; min-width: 0; margin-bottom: 0; }
+  .chart-wrap { position: relative; height: 250px; }
+  .chart-wrap-sm { position: relative; height: 190px; }
+  .chart-wrap-lg { position: relative; height: 320px; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 12.5px; background: var(--table-bg); border-radius: 10px; overflow: hidden; }
+  thead th { text-align: left; padding: 9px 8px; color: var(--ink-faint); font-weight: 600; border-bottom: 1px solid var(--light-border); position: sticky; top: 0; background: var(--table-bg-alt); cursor: pointer; user-select: none; text-transform: uppercase; font-size: 10.5px; letter-spacing: 0.4px; }
+  thead th:hover { color: #1e7a4f; }
+  tbody td { padding: 10px 8px; border-bottom: 1px solid var(--light-border); color: var(--ink); font-variant-numeric: tabular-nums; }
+  tbody tr:hover { background: var(--table-bg-alt); }
+  .table-scroll { max-height: 380px; overflow-y: auto; overflow-x: auto; border-radius: 10px; }
+
+  a.suburb-link { color: var(--blue); text-decoration: none; font-weight: 600; cursor: pointer; }
+  a.suburb-link:hover { text-decoration: underline; }
+  .verdict-pill { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 11px; font-weight: 700; }
+  .verdict-buy { background: var(--teal-dim); color: var(--teal); }
+  .verdict-neutral { background: rgba(242,184,75,0.15); color: var(--yellow); }
+  .verdict-rent { background: var(--red-dim); color: var(--red); }
+  .state-pill { display: inline-block; padding: 2px 9px; border-radius: 10px; font-size: 10.5px; font-weight: 600; background: rgba(91,141,239,0.15); color: var(--blue); }
+  .sig-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 10.5px; font-weight: 700; background: var(--teal-dim); color: var(--teal); }
+  .sig-badge.no { background: var(--table-bg-alt); color: var(--ink-dim); }
+  .sig-badge.pending { background: #fff2cc; color: #96690a; }
+  tr.row-pending { background: repeating-linear-gradient(135deg, transparent, transparent 8px, rgba(242,184,75,0.06) 8px, rgba(242,184,75,0.06) 16px); }
+  tr.row-pending:hover { background: var(--table-bg-alt); }
+
+  .nav-btn { background: var(--card-bg-2); border: 1px solid var(--border); color: var(--text); border-radius: 10px; padding: 9px 16px; font-size: 13px; cursor: pointer; margin-bottom: 18px; display: inline-flex; align-items: center; gap: 6px; }
+  .nav-btn:hover { border-color: var(--teal); color: var(--teal); }
+  .recommendation-text { font-size: 13.5px; color: var(--text-dim); line-height: 1.7; }
+
+  @media (max-width: 900px) {
+    body { flex-direction: column; }
+    .sidebar { width: 100%; max-height: none; flex-direction: column; }
+    .two-col, .three-col { flex-direction: column; }
+    .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="brand">
+    <div class="brand-icon">&#127968;</div>
+    <div class="brand-name">AU HOUSING</div>
+  </div>
+
+  <div class="filter-block">
+    <label>Search suburb or state</label>
+    <input id="searchBox" type="text" placeholder="Type a suburb or state...">
+  </div>
+  <div class="filter-block">
+    <label>State</label>
+    <select id="stateFilter"><option value="">All states</option></select>
+  </div>
+  <div class="filter-block">
+    <label>Region</label>
+    <select id="regionFilter"><option value="">All regions</option></select>
+  </div>
+  <div class="filter-block">
+    <label>Cluster</label>
+    <select id="clusterFilter"><option value="">All clusters</option></select>
+  </div>
+  <div class="filter-block">
+    <label>Verdict</label>
+    <select id="verdictFilter">
+      <option value="">All verdicts</option>
+      <option value="Buy">Buy</option>
+      <option value="Neutral">Neutral</option>
+      <option value="Rent">Rent</option>
+    </select>
+  </div>
+
+  <div class="sidebar-divider"></div>
+  <div class="result-count-box" id="resultCount"></div>
+
+  <div class="sidebar-divider"></div>
+  <div class="sidebar-legend">
+    <div><span class="legend-swatch" style="background:var(--teal);"></span>Buy</div>
+    <div><span class="legend-swatch" style="background:var(--yellow);"></span>Neutral</div>
+    <div><span class="legend-swatch" style="background:var(--red);"></span>Rent</div>
+  </div>
+
+  <div class="sidebar-divider"></div>
+  <div class="sidebar-nav-title">Add a state dataset</div>
+  <div class="filter-block">
+    <input id="stateNameInput" type="text" placeholder="State name (e.g. Queensland)">
+  </div>
+  <div class="drop-zone" id="dropZone">
+    <div class="drop-zone-icon">&#8679;</div>
+    <div class="drop-zone-text"><strong>Drop CSV files</strong> or click to browse</div>
+    <input type="file" id="fileInput" accept=".csv" multiple hidden>
+  </div>
+  <div class="upload-hint">Needs a suburb-summary CSV: <em>Suburb, Region, Price2024, WeeklyRentJun25</em>, optionally <em>GrossYieldPct, PriceToRentRatio, GrowthPAPct, Growth10YrPct, RentVolatilityCVPct, Verdict, Cluster</em>. Missing Verdict/Cluster are estimated using the same price-to-rent ranking and price/yield rules as the Victorian dataset. Drop a matching <em>Quarterly_Rent</em>-style CSV (Suburb, Quarter, WeeklyRent) too, to power the rent trend chart. See <em>data/templates/</em> in the project repo for a working example.</div>
+  <div id="uploadStatus" class="upload-status"></div>
+  <div id="uploadedChips" class="uploaded-chip-list"></div>
+
+  <div class="sidebar-divider"></div>
+  <div class="sidebar-nav-title">Sections</div>
+  <div class="sidebar-nav">
+    <div class="sidebar-nav-item" onclick="showSection('quadrant')"><span class="nav-dot"></span>Growth vs Yield Quadrant<span class="nav-arrow">&#8594;</span></div>
+    <div class="sidebar-nav-item" onclick="showSection('cluster')"><span class="nav-dot"></span>Cluster Composition<span class="nav-arrow">&#8594;</span></div>
+    <div class="sidebar-nav-item" onclick="showSection('ttest')"><span class="nav-dot"></span>Before/After Testing<span class="nav-arrow">&#8594;</span></div>
+    <div class="sidebar-nav-item" onclick="showSection('table')"><span class="nav-dot"></span>Suburb Detail Table<span class="nav-arrow">&#8594;</span></div>
+  </div>
+</div>
+
+<div class="main">
+
+  <div id="summaryView">
+
+    <div class="main-header">
+      <div>
+        <h1>Dashboard Summary</h1>
+        <div class="subtitle" id="headerSubtitle">Loading...</div>
+      </div>
+      <div class="header-badge"><div class="avatar"></div> Buy vs Rent Analytics</div>
+    </div>
+
+    <div id="kpis" class="kpi-grid"></div>
+
+    <div class="two-col">
+      <div class="panel panel-clickable" onclick="showSection('ranking')">
+        <div class="panel-head">
+          <div class="panel-title">Price Growth Ranking - Top 10 vs Bottom 10</div>
+          <div class="panel-tag">View Full Page</div>
+        </div>
+        <div class="panel-subtitle">Per-annum growth. Click to view full page.</div>
+        <div class="chart-wrap-sm"><canvas id="rankChartPreview"></canvas></div>
+      </div>
+      <div class="panel panel-clickable" onclick="showSection('trend')">
+        <div class="panel-head">
+          <div class="panel-title">Median Weekly Rent vs RBA Cash Rate</div>
+          <div class="panel-tag">View Full Page</div>
+        </div>
+        <div class="panel-subtitle">All 6 events marked, independently cross-validated in SAS Studio. Click to view full page.</div>
+        <div class="chart-wrap-sm"><canvas id="trendChartPreview"></canvas></div>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="panel panel-clickable" onclick="showSection('quadrant')">
+        <div class="panel-head">
+          <div class="panel-title">Growth vs Yield Quadrant</div>
+          <div class="panel-tag">View Full Page</div>
+        </div>
+        <div class="panel-subtitle">Coloured by verdict. Click to view full page.</div>
+        <div class="chart-wrap-sm"><canvas id="quadrantChartPreview"></canvas></div>
+      </div>
+      <div class="panel panel-clickable" onclick="showSection('cluster')">
+        <div class="panel-head">
+          <div class="panel-title">Cluster Composition</div>
+          <div class="panel-tag">View Full Page</div>
+        </div>
+        <div class="panel-subtitle">Suburb count per investment-style cluster within the current filter.</div>
+        <div class="chart-wrap-sm"><canvas id="clusterChartPreview"></canvas></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="rankingView" style="display:none;">
+    <button class="nav-btn" onclick="showSummary()">&#8592; Back to summary</button>
+    <div class="main-header"><h1 style="font-size:22px;">Price Growth Ranking - Top 10 vs Bottom 10</h1></div>
+    <div class="panel">
+      <div class="panel-subtitle">Per-annum growth from each dataset's growth columns (or supplied estimate). Click a bar for suburb detail.</div>
+      <div class="chart-wrap-lg" style="height:520px;"><canvas id="rankChartBig"></canvas></div>
+    </div>
+  </div>
+
+  <div id="trendView" style="display:none;">
+    <button class="nav-btn" onclick="showSummary()">&#8592; Back to summary</button>
+    <div class="main-header"><h1 style="font-size:22px;">Median Weekly Rent vs RBA Cash Rate</h1></div>
+    <div class="panel">
+      <div class="panel-subtitle">Aggregate across the current filter selection, with all 6 tested events marked. Suburbs without matching quarterly rent history are excluded from the average for each quarter.</div>
+      <div class="chart-wrap-lg" style="height:480px;"><canvas id="trendChartBig"></canvas></div>
+    </div>
+  </div>
+
+  <div id="detailView" style="display:none;">
+    <button class="nav-btn" onclick="showSummary()">&#8592; Back to summary</button>
+    <div class="main-header"><h1 id="detailTitle" style="font-size:22px;"></h1></div>
+    <div id="detailKpis" class="kpi-grid kpi-grid-3"></div>
+    <div class="panel">
+      <div class="panel-title">Weekly Rent vs RBA Cash Rate</div>
+      <div class="panel-subtitle">Dashed lines mark the tested policy/rate events. Suburbs without quarterly rent history will show a flat or empty line.</div>
+      <div class="chart-wrap-lg"><canvas id="detailTrendChart"></canvas></div>
+    </div>
+    <div class="panel">
+      <div class="panel-title">Recommendation</div>
+      <div id="detailVerdictText" class="recommendation-text" style="margin-top:8px;"></div>
+    </div>
+  </div>
+
+  <div id="quadrantView" style="display:none;">
+    <button class="nav-btn" onclick="showSummary()">&#8592; Back to summary</button>
+    <div class="main-header"><h1 style="font-size:22px;">Growth vs Yield Quadrant</h1></div>
+    <div class="panel">
+      <div class="panel-subtitle">Each point is a suburb, coloured by verdict. Click a point to open its detail page.</div>
+      <div class="chart-wrap" style="height:520px;"><canvas id="quadrantChartBig"></canvas></div>
+    </div>
+  </div>
+
+  <div id="clusterView" style="display:none;">
+    <button class="nav-btn" onclick="showSummary()">&#8592; Back to summary</button>
+    <div class="main-header"><h1 style="font-size:22px;">Cluster Composition</h1></div>
+    <div class="panel">
+      <div class="panel-subtitle">Suburb count per investment-style cluster within the current filter. Clusters for uploaded states without a supplied Cluster column are estimated from price and yield, not full k-means.</div>
+      <div class="chart-wrap" style="height:480px;"><canvas id="clusterChartBig"></canvas></div>
+    </div>
+  </div>
+
+  <div id="ttestView" style="display:none;">
+    <button class="nav-btn" onclick="showSummary()">&#8592; Back to summary</button>
+    <div class="main-header"><h1 style="font-size:22px;">Before/After Policy Event Testing</h1></div>
+    <div class="panel">
+      <div class="panel-subtitle">Paired t-test on mean weekly rent (4 quarters before vs after each event), n=75 suburbs, fixed to the original Victorian sample spanning the full 2020-2025 rate cycle - it does not include suburbs added via the upload tool. All 6 events are independently cross-validated in SAS Studio PROC TTEST, with t-statistics matching Python closely in every case.</div>
+      <div class="table-scroll" style="max-height:none;">
+        <table>
+          <thead>
+            <tr><th>Event</th><th>Mean Rent Change</th><th>t-stat</th><th>p-value</th><th>Result</th></tr>
+          </thead>
+          <tbody id="ttestBodyBig"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div id="tableView" style="display:none;">
+    <button class="nav-btn" onclick="showSummary()">&#8592; Back to summary</button>
+    <div class="main-header"><h1 style="font-size:22px;">Suburb Detail Table</h1></div>
+    <div class="panel">
+      <div class="panel-subtitle">Click a suburb name for its detail page, or a column header to sort. All figures reflect the current filter selection.</div>
+      <div class="table-scroll" style="max-height:640px;">
+        <table>
+          <thead>
+            <tr>
+              <th data-key="name">Suburb</th><th data-key="state">State</th><th data-key="region">Region</th><th data-key="price">Price</th>
+              <th data-key="rentLatest">Rent ($/wk)</th><th data-key="growth_pa">Growth p.a.</th>
+              <th data-key="yield">Yield</th><th data-key="cv">Volatility</th><th data-key="cluster">Cluster</th><th data-key="verdict">Verdict</th>
+            </tr>
+          </thead>
+          <tbody id="suburbTableBodyBig"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+(function(){
+const victoriaData = {"Altona": {"region": "Outer Western Melbourne", "price": 1170000, "yield": 2.44, "ratio": 40.9, "verdict": "Neutral", "growth_pa": 6.1, "growth_10yr": 81, "cv": 13.34, "cluster": "Mid-Range Balanced", "rent": [400, 400, 400, 400, 400, 400, 400, 400, 400, 400, 415, 420, 430, 450, 470, 490, 510, 530, 550, 550, 550, 550]}, "Armadale": {"region": "Inner Melbourne", "price": 2380000, "yield": 1.35, "ratio": 73.8, "verdict": "Rent", "growth_pa": 3.1, "growth_10yr": 36, "cv": 12.79, "cluster": "Expensive & Stable", "rent": [500, 500, 500, 495, 450, 440, 425, 420, 430, 450, 450, 460, 490, 500, 525, 560, 560, 583, 600, 600, 625, 620]}, "Bairnsdale": {"region": "Other Regional Centres", "price": 430000, "yield": 5.56, "ratio": 18.0, "verdict": "Buy", "growth_pa": 5.8, "growth_10yr": 76, "cv": 13.56, "cluster": "Affordable & High-Yield", "rent": [310, 300, 300, 310, 320, 330, 340, 350, 360, 370, 380, 400, 400, 410, 410, 420, 420, 425, 430, 450, 450, 460]}, "Balwyn": {"region": "Inner Eastern Melbourne", "price": 2868000, "yield": 1.31, "ratio": 76.6, "verdict": "Rent", "growth_pa": 4.9, "growth_10yr": 61, "cv": 11.52, "cluster": "Expensive & Stable", "rent": [550, 550, 560, 550, 540, 520, 520, 530, 530, 550, 550, 550, 575, 610, 635, 650, 680, 680, 700, 700, 700, 720]}, "Bayswater": {"region": "Outer Eastern Melbourne", "price": 862000, "yield": 3.32, "ratio": 30.1, "verdict": "Neutral", "growth_pa": 5.1, "growth_10yr": 64, "cv": 12.57, "cluster": "Mid-Range Balanced", "rent": [390, 390, 390, 390, 390, 400, 400, 410, 410, 420, 420, 425, 440, 450, 470, 485, 495, 500, 520, 550, 550, 550]}, "Benalla": {"region": "Other Regional Centres", "price": 440000, "yield": 5.24, "ratio": 19.1, "verdict": "Buy", "growth_pa": 6.4, "growth_10yr": 87, "cv": 12.07, "cluster": "Affordable & High-Yield", "rent": [300, 300, 300, 310, 320, 330, 350, 350, 360, 370, 380, 390, 393, 395, 400, 400, 400, 400, 420, 425, 440, 443]}, "Bendigo": {"region": "Bendigo", "price": 620000, "yield": 3.86, "ratio": 25.9, "verdict": "Buy", "growth_pa": 5.1, "growth_10yr": 65, "cv": 10.7, "cluster": "Mid-Range Balanced", "rent": [320, 330, 340, 340, 340, 350, 350, 360, 370, 375, 380, 380, 383, 395, 400, 410, 420, 420, 440, 450, 450, 460]}, "Bentleigh": {"region": "Southern Melbourne", "price": 1641500, "yield": 2.15, "ratio": 46.4, "verdict": "Rent", "growth_pa": 4.6, "growth_10yr": 56, "cv": 12.84, "cluster": "Mid-Range Balanced", "rent": [510, 500, 500, 495, 490, 485, 490, 495, 495, 500, 501, 523, 550, 560, 590, 600, 635, 650, 650, 675, 680, 680]}, "Berwick": {"region": "South Eastern Melbourne", "price": 870000, "yield": 3.59, "ratio": 27.9, "verdict": "Neutral", "growth_pa": 6, "growth_10yr": 79, "cv": 14.69, "cluster": "Affordable & High-Yield", "rent": [395, 400, 400, 400, 400, 410, 410, 420, 430, 440, 450, 460, 470, 485, 500, 520, 535, 550, 570, 580, 595, 600]}, "Blackburn": {"region": "Inner Eastern Melbourne", "price": 1517000, "yield": 2.06, "ratio": 48.6, "verdict": "Rent", "growth_pa": 5, "growth_10yr": 62, "cv": 13.36, "cluster": "Mid-Range Balanced", "rent": [440, 440, 431, 430, 425, 420, 420, 430, 435, 440, 450, 450, 460, 480, 500, 520, 550, 560, 580, 598, 600, 600]}, "Boronia": {"region": "Outer Eastern Melbourne", "price": 849500, "yield": 3.43, "ratio": 29.2, "verdict": "Neutral", "growth_pa": 5.4, "growth_10yr": 70, "cv": 12.86, "cluster": "Mid-Range Balanced", "rent": [390, 395, 395, 395, 395, 395, 400, 400, 405, 415, 420, 430, 450, 450, 460, 480, 493, 510, 530, 550, 550, 560]}, "Box Hill": {"region": "Inner Eastern Melbourne", "price": 1705000, "yield": 1.83, "ratio": 54.6, "verdict": "Rent", "growth_pa": 4.8, "growth_10yr": 60, "cv": 15.58, "cluster": "Mid-Range Balanced", "rent": [465, 460, 450, 430, 410, 400, 400, 400, 410, 420, 430, 450, 475, 500, 540, 550, 580, 595, 600, 600, 600, 600]}, "Brighton": {"region": "Southern Melbourne", "price": 3405500, "yield": 1.22, "ratio": 81.9, "verdict": "Rent", "growth_pa": 5.8, "growth_10yr": 76, "cv": 6.61, "cluster": "Premium & Growing", "rent": [688, 680, 683, 675, 670, 653, 650, 663, 650, 670, 675, 678, 730, 740, 770, 805, 775, 700, 695, 691, 725, 800]}, "Brighton East": {"region": "Southern Melbourne", "price": 2200000, "yield": 1.89, "ratio": 52.9, "verdict": "Rent", "growth_pa": 5.4, "growth_10yr": 69, "cv": 6.47, "cluster": "Mid-Range Balanced", "rent": [745, 750, 730, 718, 695, 700, 725, 750, 750, 750, 750, 753, 788, 790, 800, 800, 850, 850, 865, 868, 800, 800]}, "Brunswick": {"region": "North Western Melbourne", "price": 1300000, "yield": 2.4, "ratio": 41.7, "verdict": "Neutral", "growth_pa": 4.8, "growth_10yr": 60, "cv": 12.47, "cluster": "Mid-Range Balanced", "rent": [480, 480, 480, 460, 450, 425, 420, 420, 420, 430, 450, 455, 490, 510, 540, 550, 550, 570, 580, 590, 595, 600]}, "Carlton North": {"region": "Inner Melbourne", "price": 1515000, "yield": 2.57, "ratio": 38.8, "verdict": "Neutral", "growth_pa": 3.3, "growth_10yr": 38, "cv": 8.38, "cluster": "Expensive & Stable", "rent": [590, 590, 590, 590, 580, 575, 575, 580, 580, 595, 600, 600, 620, 630, 650, 670, 680, 690, 680, 700, 720, 750]}, "Carnegie": {"region": "Southern Melbourne", "price": 1715000, "yield": 1.7, "ratio": 58.9, "verdict": "Rent", "growth_pa": 5.5, "growth_10yr": 70, "cv": 13.06, "cluster": "Mid-Range Balanced", "rent": [440, 440, 435, 430, 410, 400, 395, 390, 390, 395, 400, 410, 435, 450, 480, 505, 520, 530, 550, 550, 550, 560]}, "Castlemaine": {"region": "Other Regional Centres", "price": 747000, "yield": 3.27, "ratio": 30.6, "verdict": "Neutral", "growth_pa": 7.3, "growth_10yr": 102, "cv": 10.18, "cluster": "Affordable & High-Yield", "rent": [350, 345, 350, 350, 350, 375, 375, 380, 385, 390, 408, 420, 430, 420, 420, 430, 450, 450, 460, 455, 460, 470]}, "Caulfield": {"region": "Southern Melbourne", "price": 2335000, "yield": 1.45, "ratio": 69.1, "verdict": "Rent", "growth_pa": 5.9, "growth_10yr": 77, "cv": 17.27, "cluster": "Mid-Range Balanced", "rent": [485, 485, 480, 460, 425, 410, 400, 400, 410, 420, 440, 460, 500, 530, 550, 580, 600, 610, 640, 645, 650, 650]}, "Cheltenham": {"region": "Southern Melbourne", "price": 1332500, "yield": 2.42, "ratio": 41.3, "verdict": "Neutral", "growth_pa": 5.6, "growth_10yr": 72, "cv": 10.82, "cluster": "Mid-Range Balanced", "rent": [470, 470, 475, 470, 460, 460, 460, 470, 480, 485, 495, 495, 500, 510, 525, 550, 575, 590, 600, 600, 620, 620]}, "Clayton": {"region": "Inner Eastern Melbourne", "price": 1165000, "yield": 2.68, "ratio": 37.3, "verdict": "Neutral", "growth_pa": 4.5, "growth_10yr": 55, "cv": 15.66, "cluster": "Mid-Range Balanced", "rent": [430, 430, 420, 420, 400, 400, 400, 400, 400, 415, 430, 445, 450, 480, 500, 520, 550, 570, 590, 595, 600, 600]}, "Corio": {"region": "Geelong", "price": 488000, "yield": 4.26, "ratio": 23.5, "verdict": "Buy", "growth_pa": 7.3, "growth_10yr": 102, "cv": 10.2, "cluster": "Affordable & High-Yield", "rent": [300, 300, 300, 300, 300, 305, 320, 320, 330, 330, 340, 350, 350, 360, 365, 370, 380, 385, 390, 390, 395, 400]}, "Craigieburn": {"region": "North Western Melbourne", "price": 660000, "yield": 4.11, "ratio": 24.3, "verdict": "Buy", "growth_pa": 6.2, "growth_10yr": 82, "cv": 11.46, "cluster": "Affordable & High-Yield", "rent": [390, 390, 390, 390, 390, 390, 390, 390, 400, 400, 410, 420, 425, 430, 450, 460, 480, 500, 506, 520, 525, 522]}, "Cranbourne": {"region": "South Eastern Melbourne", "price": 660000, "yield": 4.57, "ratio": 21.9, "verdict": "Buy", "growth_pa": 7.1, "growth_10yr": 99, "cv": 14.75, "cluster": "Affordable & High-Yield", "rent": [388, 390, 390, 395, 395, 400, 400, 410, 420, 430, 440, 450, 460, 480, 490, 500, 525, 550, 560, 575, 580, 580]}, "Dandenong": {"region": "South Eastern Melbourne", "price": 720500, "yield": 3.75, "ratio": 26.6, "verdict": "Neutral", "growth_pa": 5.1, "growth_10yr": 64, "cv": 16.16, "cluster": "Mid-Range Balanced", "rent": [350, 350, 350, 350, 350, 350, 350, 350, 350, 360, 360, 367, 370, 385, 400, 420, 440, 480, 500, 520, 530, 520]}, "East Melbourne": {"region": "Inner Melbourne", "price": 3650000, "yield": 0.9, "ratio": 111.4, "verdict": "Rent", "growth_pa": 7, "growth_10yr": 97, "cv": 11.65, "cluster": "Premium & Growing", "rent": [570, 560, 520, 500, 450, 450, 450, 450, 470, 475, 500, 500, 550, 555, 575, 595, 600, 600, 600, 625, 629, 630]}, "Echuca": {"region": "Other Regional Centres", "price": 560000, "yield": 4.18, "ratio": 23.9, "verdict": "Buy", "growth_pa": 7, "growth_10yr": 96, "cv": 10.49, "cluster": "Affordable & High-Yield", "rent": [330, 338, 340, 350, 355, 360, 358, 363, 375, 380, 390, 397, 410, 410, 420, 430, 440, 450, 450, 450, 450, 450]}, "Elsternwick": {"region": "Southern Melbourne", "price": 1953000, "yield": 1.59, "ratio": 62.8, "verdict": "Rent", "growth_pa": 4, "growth_10yr": 49, "cv": 12.24, "cluster": "Expensive & Stable", "rent": [440, 450, 455, 450, 450, 449, 433, 430, 430, 440, 450, 450, 470, 490, 510, 550, 550, 570, 575, 580, 600, 598]}, "Elwood": {"region": "Inner Melbourne", "price": 2075000, "yield": 1.44, "ratio": 69.4, "verdict": "Rent", "growth_pa": 3.9, "growth_10yr": 47, "cv": 12.78, "cluster": "Expensive & Stable", "rent": [450, 450, 450, 440, 425, 420, 420, 420, 420, 420, 430, 430, 450, 480, 500, 520, 550, 560, 580, 580, 575, 575]}, "Essendon": {"region": "North Western Melbourne", "price": 1741500, "yield": 1.64, "ratio": 60.9, "verdict": "Rent", "growth_pa": 6.3, "growth_10yr": 85, "cv": 12.34, "cluster": "Mid-Range Balanced", "rent": [415, 415, 415, 410, 400, 400, 399, 400, 400, 400, 400, 410, 425, 450, 465, 490, 500, 510, 530, 540, 550, 550]}, "Ferntree Gully": {"region": "Outer Eastern Melbourne", "price": 888500, "yield": 3.45, "ratio": 29.0, "verdict": "Neutral", "growth_pa": 5.8, "growth_10yr": 76, "cv": 12.88, "cluster": "Mid-Range Balanced", "rent": [410, 420, 420, 420, 420, 420, 420, 430, 430, 435, 440, 450, 460, 475, 490, 500, 530, 550, 560, 580, 580, 590]}, "Fitzroy": {"region": "Inner Melbourne", "price": 1750000, "yield": 2.08, "ratio": 48.1, "verdict": "Rent", "growth_pa": 4.5, "growth_10yr": 55, "cv": 9.27, "cluster": "Mid-Range Balanced", "rent": [575, 570, 565, 550, 550, 535, 525, 540, 540, 540, 550, 560, 590, 600, 605, 630, 650, 650, 660, 680, 695, 700]}, "Footscray": {"region": "Outer Western Melbourne", "price": 960000, "yield": 2.82, "ratio": 35.5, "verdict": "Neutral", "growth_pa": 4.1, "growth_10yr": 49, "cv": 13.95, "cluster": "Mid-Range Balanced", "rent": [400, 400, 390, 380, 370, 365, 365, 365, 365, 370, 380, 390, 400, 430, 450, 470, 490, 500, 520, 520, 520, 520]}, "Frankston": {"region": "Mornington Peninsula", "price": 740000, "yield": 3.79, "ratio": 26.4, "verdict": "Buy", "growth_pa": 7.1, "growth_10yr": 99, "cv": 12.82, "cluster": "Affordable & High-Yield", "rent": [370, 370, 370, 375, 375, 380, 390, 400, 410, 420, 430, 440, 450, 450, 462, 475, 490, 500, 510, 520, 530, 540]}, "Hamilton": {"region": "Other Regional Centres", "price": 380000, "yield": 4.79, "ratio": 20.9, "verdict": "Buy", "growth_pa": 6.6, "growth_10yr": 90, "cv": 9.55, "cluster": "Affordable & High-Yield", "rent": [270, 270, 270, 275, 280, 280, 290, 300, 300, 320, 320, 330, 330, 330, 335, 340, 340, 350, 350, 350, 353, 350]}, "Hawthorn": {"region": "Inner Eastern Melbourne", "price": 2900000, "yield": 0.95, "ratio": 105.2, "verdict": "Rent", "growth_pa": 6.1, "growth_10yr": 81, "cv": 13.37, "cluster": "Premium & Growing", "rent": [435, 440, 430, 420, 400, 385, 380, 375, 375, 375, 385, 400, 420, 450, 470, 495, 520, 539, 530, 530, 530, 530]}, "Horsham": {"region": "Other Regional Centres", "price": 382500, "yield": 5.17, "ratio": 19.4, "verdict": "Buy", "growth_pa": 5.9, "growth_10yr": 78, "cv": 10.8, "cluster": "Affordable & High-Yield", "rent": [275, 280, 280, 285, 290, 300, 315, 320, 330, 330, 340, 340, 350, 350, 350, 360, 370, 380, 380, 380, 380, 380]}, "Keilor": {"region": "North Western Melbourne", "price": 1110000, "yield": 2.95, "ratio": 33.9, "verdict": "Neutral", "growth_pa": 5.8, "growth_10yr": 75, "cv": 16.28, "cluster": "Mid-Range Balanced", "rent": [420, 410, 410, 410, 415, 420, 420, 440, 450, 460, 450, 450, 480, 480, 510, 515, 575, 600, 610, 625, 633, 630]}, "Kew": {"region": "Inner Eastern Melbourne", "price": 2805000, "yield": 1.26, "ratio": 79.3, "verdict": "Rent", "growth_pa": 3.7, "growth_10yr": 44, "cv": 13.56, "cluster": "Expensive & Stable", "rent": [520, 525, 520, 500, 495, 480, 475, 475, 480, 495, 500, 500, 530, 550, 595, 610, 650, 650, 663, 680, 680, 680]}, "Lara": {"region": "Geelong", "price": 678000, "yield": 4.22, "ratio": 23.7, "verdict": "Buy", "growth_pa": 7.1, "growth_10yr": 99, "cv": 10.94, "cluster": "Affordable & High-Yield", "rent": [400, 400, 400, 400, 400, 420, 430, 438, 450, 450, 460, 480, 485, 490, 500, 500, 520, 520, 530, 540, 540, 550]}, "Malvern": {"region": "Southern Melbourne", "price": 3306000, "yield": 1.0, "ratio": 100.1, "verdict": "Rent", "growth_pa": 5.4, "growth_10yr": 70, "cv": 12.35, "cluster": "Premium & Growing", "rent": [480, 465, 480, 470, 450, 450, 450, 450, 460, 450, 460, 475, 500, 548, 585, 585, 580, 580, 585, 600, 600, 635]}, "Malvern East": {"region": "Southern Melbourne", "price": 2057500, "yield": 1.54, "ratio": 64.9, "verdict": "Rent", "growth_pa": 4.1, "growth_10yr": 49, "cv": 14.4, "cluster": "Expensive & Stable", "rent": [485, 480, 460, 450, 430, 410, 410, 400, 410, 430, 450, 460, 490, 500, 530, 550, 575, 580, 600, 600, 610, 610]}, "Melton": {"region": "Outer Western Melbourne", "price": 471000, "yield": 4.97, "ratio": 20.1, "verdict": "Buy", "growth_pa": 7, "growth_10yr": 96, "cv": 10.53, "cluster": "Affordable & High-Yield", "rent": [340, 345, 350, 350, 350, 350, 350, 350, 350, 350, 360, 360, 370, 380, 395, 410, 420, 430, 450, 450, 450, 450]}, "Mildura": {"region": "Other Regional Centres", "price": 460000, "yield": 5.09, "ratio": 19.7, "verdict": "Buy", "growth_pa": 6.5, "growth_10yr": 88, "cv": 11.78, "cluster": "Affordable & High-Yield", "rent": [310, 310, 310, 320, 320, 330, 340, 340, 340, 340, 350, 350, 360, 370, 380, 380, 395, 395, 410, 430, 450, 450]}, "Morwell": {"region": "Other Regional Centres", "price": 335000, "yield": 5.9, "ratio": 17.0, "verdict": "Buy", "growth_pa": 8.4, "growth_10yr": 123, "cv": 16.62, "cluster": "Affordable & High-Yield", "rent": [225, 230, 230, 230, 240, 250, 250, 268, 280, 290, 300, 300, 320, 330, 340, 340, 340, 350, 350, 350, 360, 380]}, "Mount Waverley": {"region": "Inner Eastern Melbourne", "price": 1615000, "yield": 2.16, "ratio": 46.4, "verdict": "Rent", "growth_pa": 5.4, "growth_10yr": 70, "cv": 11.95, "cluster": "Mid-Range Balanced", "rent": [520, 510, 500, 500, 490, 500, 498, 500, 500, 500, 520, 530, 550, 570, 600, 600, 650, 650, 650, 660, 670, 670]}, "Noble Park": {"region": "South Eastern Melbourne", "price": 778500, "yield": 3.44, "ratio": 29.1, "verdict": "Neutral", "growth_pa": 5.9, "growth_10yr": 77, "cv": 13.72, "cluster": "Affordable & High-Yield", "rent": [360, 360, 360, 360, 360, 360, 360, 360, 365, 375, 380, 380, 390, 400, 415, 440, 458, 480, 500, 500, 500, 515]}, "North Bendigo": {"region": "Bendigo", "price": 497500, "yield": 4.91, "ratio": 20.4, "verdict": "Buy", "growth_pa": 5.9, "growth_10yr": 78, "cv": 12.98, "cluster": "Affordable & High-Yield", "rent": [310, 315, 320, 330, 330, 345, 350, 360, 380, 380, 390, 400, 405, 420, 430, 440, 430, 440, 450, 450, 460, 470]}, "North Geelong": {"region": "Geelong", "price": 640000, "yield": 3.9, "ratio": 25.6, "verdict": "Buy", "growth_pa": 7.8, "growth_10yr": 113, "cv": 10.22, "cluster": "Affordable & High-Yield", "rent": [350, 350, 360, 360, 360, 373, 385, 390, 400, 400, 410, 420, 430, 440, 440, 450, 450, 450, 460, 470, 475, 480]}, "Northcote": {"region": "North Eastern Melbourne", "price": 1600000, "yield": 2.08, "ratio": 48.1, "verdict": "Rent", "growth_pa": 5.6, "growth_10yr": 72, "cv": 10.29, "cluster": "Mid-Range Balanced", "rent": [500, 500, 500, 500, 500, 490, 495, 490, 490, 490, 480, 500, 515, 530, 550, 580, 598, 600, 615, 625, 640, 640]}, "Pakenham": {"region": "South Eastern Melbourne", "price": 655000, "yield": 4.29, "ratio": 23.3, "verdict": "Buy", "growth_pa": 6.5, "growth_10yr": 87, "cv": 15.07, "cluster": "Affordable & High-Yield", "rent": [355, 350, 350, 360, 360, 365, 370, 375, 380, 390, 400, 410, 420, 435, 450, 470, 480, 500, 510, 520, 530, 540]}, "Port Melbourne": {"region": "Inner Melbourne", "price": 1600000, "yield": 2.5, "ratio": 40.0, "verdict": "Neutral", "growth_pa": 5.7, "growth_10yr": 74, "cv": 8.93, "cluster": "Mid-Range Balanced", "rent": [630, 600, 590, 590, 575, 590, 595, 595, 600, 600, 600, 623, 650, 650, 675, 675, 695, 700, 700, 735, 750, 770]}, "Portland": {"region": "Other Regional Centres", "price": 415000, "yield": 5.14, "ratio": 19.5, "verdict": "Buy", "growth_pa": 7, "growth_10yr": 98, "cv": 10.55, "cluster": "Affordable & High-Yield", "rent": [290, 300, 300, 310, 320, 350, 350, 350, 350, 350, 360, 370, 380, 400, 400, 400, 400, 400, 400, 400, 400, 410]}, "Preston": {"region": "North Eastern Melbourne", "price": 1185000, "yield": 2.41, "ratio": 41.4, "verdict": "Neutral", "growth_pa": 5.6, "growth_10yr": 72, "cv": 10.99, "cluster": "Mid-Range Balanced", "rent": [425, 420, 425, 420, 420, 410, 400, 400, 400, 410, 420, 430, 450, 460, 480, 500, 500, 500, 520, 530, 550, 550]}, "Reservoir": {"region": "North Eastern Melbourne", "price": 905000, "yield": 3.02, "ratio": 33.2, "verdict": "Neutral", "growth_pa": 5.3, "growth_10yr": 67, "cv": 12.1, "cluster": "Mid-Range Balanced", "rent": [380, 380, 385, 385, 380, 380, 380, 380, 380, 380, 390, 400, 405, 420, 430, 450, 470, 480, 500, 500, 520, 525]}, "Ringwood": {"region": "Outer Eastern Melbourne", "price": 1025000, "yield": 2.82, "ratio": 35.5, "verdict": "Neutral", "growth_pa": 4.5, "growth_10yr": 55, "cv": 11.66, "cluster": "Mid-Range Balanced", "rent": [410, 410, 415, 415, 410, 410, 410, 410, 420, 420, 430, 440, 450, 460, 470, 490, 500, 520, 549, 550, 550, 555]}, "Rowville": {"region": "Outer Eastern Melbourne", "price": 1055000, "yield": 3.2, "ratio": 31.2, "verdict": "Neutral", "growth_pa": 5.5, "growth_10yr": 71, "cv": 12.81, "cluster": "Mid-Range Balanced", "rent": [450, 450, 450, 460, 460, 460, 470, 470, 480, 490, 500, 505, 510, 530, 550, 550, 580, 590, 600, 640, 650, 650]}, "Seymour": {"region": "Other Regional Centres", "price": 445000, "yield": 4.67, "ratio": 21.4, "verdict": "Buy", "growth_pa": 7.6, "growth_10yr": 109, "cv": 11.42, "cluster": "Affordable & High-Yield", "rent": [295, 300, 300, 300, 300, 300, 305, 320, 331, 350, 355, 360, 370, 370, 380, 380, 390, 395, 400, 400, 400, 400]}, "Shepparton": {"region": "Other Regional Centres", "price": 465000, "yield": 5.03, "ratio": 19.9, "verdict": "Buy", "growth_pa": 6.7, "growth_10yr": 92, "cv": 14.43, "cluster": "Affordable & High-Yield", "rent": [290, 290, 300, 300, 300, 310, 320, 330, 330, 350, 350, 360, 375, 385, 390, 390, 400, 410, 420, 440, 450, 450]}, "South Melbourne": {"region": "Inner Melbourne", "price": 1532500, "yield": 2.21, "ratio": 45.3, "verdict": "Neutral", "growth_pa": 2.5, "growth_10yr": 28, "cv": 14.29, "cluster": "Expensive & Stable", "rent": [550, 530, 513, 490, 450, 430, 430, 435, 450, 460, 480, 500, 545, 560, 580, 600, 620, 625, 640, 640, 650, 650]}, "South Yarra": {"region": "Inner Melbourne", "price": 2260000, "yield": 1.38, "ratio": 72.4, "verdict": "Rent", "growth_pa": 4.5, "growth_10yr": 56, "cv": 14.98, "cluster": "Expensive & Stable", "rent": [500, 491, 480, 450, 425, 410, 400, 400, 400, 420, 440, 450, 490, 513, 550, 565, 580, 600, 600, 600, 600, 600]}, "Springvale": {"region": "South Eastern Melbourne", "price": 850000, "yield": 3.36, "ratio": 29.7, "verdict": "Neutral", "growth_pa": 4.8, "growth_10yr": 60, "cv": 14.0, "cluster": "Mid-Range Balanced", "rent": [395, 400, 400, 392, 390, 390, 390, 390, 395, 400, 400, 420, 430, 450, 460, 485, 508, 530, 550, 550, 550, 550]}, "St Kilda": {"region": "Inner Melbourne", "price": 1515000, "yield": 1.92, "ratio": 52.0, "verdict": "Rent", "growth_pa": 2.1, "growth_10yr": 24, "cv": 14.43, "cluster": "Expensive & Stable", "rent": [430, 430, 420, 400, 390, 380, 375, 370, 370, 380, 395, 400, 420, 450, 460, 481, 500, 520, 540, 550, 550, 560]}, "Sunbury": {"region": "North Western Melbourne", "price": 665000, "yield": 4.07, "ratio": 24.6, "verdict": "Buy", "growth_pa": 6.3, "growth_10yr": 85, "cv": 11.18, "cluster": "Affordable & High-Yield", "rent": [375, 370, 370, 380, 380, 380, 390, 390, 390, 400, 400, 410, 420, 425, 440, 450, 470, 480, 490, 495, 500, 520]}, "Sunshine": {"region": "Outer Western Melbourne", "price": 820000, "yield": 3.08, "ratio": 32.5, "verdict": "Neutral", "growth_pa": 5.4, "growth_10yr": 70, "cv": 11.7, "cluster": "Mid-Range Balanced", "rent": [360, 360, 360, 360, 350, 350, 350, 350, 350, 360, 360, 370, 370, 380, 400, 420, 430, 450, 450, 460, 480, 485]}, "Swan Hill": {"region": "Other Regional Centres", "price": 472500, "yield": 4.4, "ratio": 22.7, "verdict": "Buy", "growth_pa": 7.5, "growth_10yr": 105, "cv": 12.5, "cluster": "Affordable & High-Yield", "rent": [260, 270, 280, 280, 295, 300, 300, 300, 300, 300, 310, 310, 320, 320, 340, 350, 370, 370, 370, 370, 400, 400]}, "Sydenham": {"region": "Outer Western Melbourne", "price": 704000, "yield": 3.69, "ratio": 27.1, "verdict": "Neutral", "growth_pa": 5.4, "growth_10yr": 70, "cv": 8.94, "cluster": "Mid-Range Balanced", "rent": [400, 400, 400, 400, 400, 400, 400, 400, 400, 410, 415, 420, 420, 430, 450, 450, 470, 480, 500, 500, 500, 500]}, "Thornbury": {"region": "North Eastern Melbourne", "price": 1430000, "yield": 1.91, "ratio": 52.4, "verdict": "Rent", "growth_pa": 5.5, "growth_10yr": 70, "cv": 11.05, "cluster": "Mid-Range Balanced", "rent": [430, 420, 420, 420, 410, 400, 400, 400, 400, 400, 400, 410, 430, 450, 473, 500, 500, 500, 515, 520, 548, 525]}, "Toorak": {"region": "Inner Melbourne", "price": 6060000, "yield": 0.56, "ratio": 179.3, "verdict": "Rent", "growth_pa": 6, "growth_10yr": 79, "cv": 10.85, "cluster": "Premium & Growing", "rent": [520, 525, 540, 520, 515, 500, 500, 500, 500, 513, 500, 530, 550, 573, 595, 600, 630, 650, 670, 660, 650, 650]}, "Torquay": {"region": "Other Regional Centres", "price": 1200000, "yield": 2.86, "ratio": 35.0, "verdict": "Neutral", "growth_pa": 7.5, "growth_10yr": 107, "cv": 9.21, "cluster": "Affordable & High-Yield", "rent": [500, 500, 500, 510, 520, 550, 550, 570, 580, 600, 600, 600, 620, 615, 625, 628, 630, 650, 650, 650, 650, 660]}, "Traralgon": {"region": "Other Regional Centres", "price": 507000, "yield": 4.51, "ratio": 22.2, "verdict": "Buy", "growth_pa": 6.3, "growth_10yr": 84, "cv": 11.61, "cluster": "Affordable & High-Yield", "rent": [300, 300, 310, 320, 330, 340, 350, 360, 360, 379, 380, 380, 385, 390, 390, 395, 410, 420, 430, 430, 440, 440]}, "West Footscray": {"region": "Outer Western Melbourne", "price": 927500, "yield": 3.08, "ratio": 32.4, "verdict": "Neutral", "growth_pa": 3.8, "growth_10yr": 45, "cv": 12.21, "cluster": "Mid-Range Balanced", "rent": [400, 410, 400, 400, 400, 395, 395, 390, 395, 400, 405, 410, 420, 430, 450, 470, 490, 500, 520, 530, 540, 550]}, "Whittlesea": {"region": "North Eastern Melbourne", "price": 700000, "yield": 4.01, "ratio": 24.9, "verdict": "Buy", "growth_pa": 6.4, "growth_10yr": 87, "cv": 12.84, "cluster": "Affordable & High-Yield", "rent": [390, 390, 390, 390, 390, 390, 390, 400, 400, 410, 420, 430, 440, 450, 465, 480, 500, 520, 530, 540, 540, 540]}, "Williamstown": {"region": "Outer Western Melbourne", "price": 1597500, "yield": 2.12, "ratio": 47.3, "verdict": "Rent", "growth_pa": 5.1, "growth_10yr": 65, "cv": 9.36, "cluster": "Mid-Range Balanced", "rent": [530, 530, 520, 520, 500, 500, 520, 510, 520, 520, 520, 540, 550, 575, 600, 595, 620, 620, 630, 650, 650, 650]}, "Wodonga": {"region": "Other Regional Centres", "price": 540000, "yield": 4.62, "ratio": 21.6, "verdict": "Buy", "growth_pa": 6.2, "growth_10yr": 83, "cv": 12.39, "cluster": "Affordable & High-Yield", "rent": [330, 330, 330, 330, 340, 350, 360, 370, 380, 390, 400, 410, 410, 420, 420, 430, 440, 450, 450, 460, 480, 480]}};
+const ttest3 = {"COVID-19 Emergency Rate Cut (Nov 2020)": {"mean_diff": -6.91, "t_stat": -2.26, "p_value": 0.0269, "n": 75, "verified": true, "note": "Cross-validated in SAS Studio PROC TTEST (t=-2.26, matching Python t=-2.258). Rent growth slowed, not accelerated - directionally different from the other five events, possibly confounded with pandemic-era border closures."}, "RBA Rate Hike Cycle Start (May 2022)": {"mean_diff": 27.25, "t_stat": 20.88, "p_value": 0.0001, "n": 75, "verified": true, "note": "Cross-validated in SAS Studio PROC TTEST (t=20.88, matching Python t=20.884)"}, "Rapid Tightening Peak (Sep 2022)": {"mean_diff": 34.15, "t_stat": 22.54, "p_value": 0.0001, "n": 75, "verified": true, "note": "Cross-validated in SAS Studio PROC TTEST (t=22.54, matching Python t=22.540). Strongest of all six results, coinciding with the single sharpest quarter of the hiking cycle (+1.50pp)."}, "International Student Cap Announcement (Aug 2024)": {"mean_diff": 40.16, "t_stat": 19.04, "p_value": 0.0001, "n": 75, "verified": true, "note": "Cross-validated in SAS Studio PROC TTEST (t=19.04, matching Python t=19.042)"}, "Foreign Buyer Ban (Apr 2025)": {"mean_diff": 16.41, "t_stat": 8.82, "p_value": 0.0001, "n": 75, "verified": true, "note": "Cross-validated in SAS Studio PROC TTEST (t=8.82, matching Python t=8.816). Only 1 post-event quarter available."}, "RBA Easing Cycle Start (Feb 2025)": {"mean_diff": 22.68, "t_stat": 12.83, "p_value": 0.0001, "n": 75, "verified": true, "note": "Cross-validated in SAS Studio PROC TTEST (t=12.83, matching Python t=12.832). Rent kept rising even after rates started falling - suggests supply/migration factors matter more than the cash rate alone here."}};
+const quarters = ['Mar20','Jun20','Sep20','Dec20','Mar21','Jun21','Sep21','Dec21','Mar22','Jun22','Sep22','Dec22','Mar23','Jun23','Sep23','Dec23','Mar24','Jun24','Sep24','Dec24','Mar25','Jun25'];
+const quartersFull = ['Mar 2020','Jun 2020','Sep 2020','Dec 2020','Mar 2021','Jun 2021','Sep 2021','Dec 2021','Mar 2022','Jun 2022','Sep 2022','Dec 2022','Mar 2023','Jun 2023','Sep 2023','Dec 2023','Mar 2024','Jun 2024','Sep 2024','Dec 2024','Mar 2025','Jun 2025'];
+const cashRate = [0.25,0.25,0.25,0.10,0.10,0.10,0.10,0.10,0.10,0.85,2.35,3.10,3.60,4.10,4.10,4.35,4.35,4.35,4.35,4.35,4.10,3.85];
+const verdictColorMap = {Buy:'#2dd4a7', Neutral:'#f2b84b', Rent:'#f2555a'};
+const GRID = 'rgba(255,255,255,0.06)';
+const TICK = '#9aa0b4';
+const BASE_STATE = 'Victoria';
+
+const eventMarkers = {
+  'Dec20': {label:'COVID cut', verified:true},
+  'Jun22': {label:'RBA hikes begin', verified:true},
+  'Sep22': {label:'Rapid tightening', verified:true},
+  'Sep24': {label:'Migration caps', verified:true},
+  'Mar25': {label:'Easing begins', verified:true},
+  'Jun25': {label:'Foreign buyer ban', verified:true}
+};
+
+const KNOWN_STATE_ABBR = {
+  'victoria':'VIC', 'new south wales':'NSW', 'queensland':'QLD', 'western australia':'WA',
+  'south australia':'SA', 'tasmania':'TAS', 'australian capital territory':'ACT', 'northern territory':'NT'
+};
+function abbreviateState(name){
+  const key = name.trim().toLowerCase();
+  if(KNOWN_STATE_ABBR[key]) return KNOWN_STATE_ABBR[key];
+  const words = name.trim().split(/\s+/);
+  if(words.length > 1) return words.map(w => w[0].toUpperCase()).join('');
+  return name.slice(0,3).toUpperCase();
+}
+
+// data is keyed by "State::Suburb" so identically-named suburbs in different states never collide.
+const data = {};
+Object.keys(victoriaData).forEach(name => {
+  data[`${BASE_STATE}::${name}`] = Object.assign({name, state: BASE_STATE}, victoriaData[name]);
+});
+
+let ids = [];
+const regionSel = document.getElementById('regionFilter');
+const clusterSel = document.getElementById('clusterFilter');
+const stateSel = document.getElementById('stateFilter');
+
+function populateSelect(sel, values, placeholder){
+  const current = sel.value;
+  sel.innerHTML = '';
+  const opt0 = document.createElement('option'); opt0.value = ''; opt0.textContent = placeholder; sel.appendChild(opt0);
+  values.forEach(v => { const o = document.createElement('option'); o.value = v; o.textContent = v; sel.appendChild(o); });
+  if(values.includes(current)) sel.value = current;
+}
+
+function refreshUniverse(){
+  ids = Object.keys(data).sort((a,b) => data[a].name.localeCompare(data[b].name));
+  const regions = Array.from(new Set(ids.map(i=>data[i].region))).sort();
+  const clusters = Array.from(new Set(ids.map(i=>data[i].cluster))).sort();
+  const states = Array.from(new Set(ids.map(i=>data[i].state))).sort();
+  populateSelect(regionSel, regions, 'All regions');
+  populateSelect(clusterSel, clusters, 'All clusters');
+  populateSelect(stateSel, states, 'All states');
+}
+
+function displayName(id){
+  const d = data[id];
+  const dupCount = ids.filter(i => data[i].name === d.name).length;
+  return dupCount > 1 ? `${d.name} (${abbreviateState(d.state)})` : d.name;
+}
+
+function fmtCurrency(v){ return v==null ? '-' : '$'+Math.round(v).toLocaleString(); }
+function numOrNull(v){
+  if(v==null || v==='') return null;
+  const n = parseFloat(v);
+  return isNaN(n) ? null : n;
+}
+
+function getFiltered(){
+  const search = document.getElementById('searchBox').value.toLowerCase();
+  const state = stateSel.value;
+  const region = regionSel.value;
+  const cluster = clusterSel.value;
+  const verdict = document.getElementById('verdictFilter').value;
+  return ids.filter(id => {
+    const d = data[id];
+    if(search && !(d.name.toLowerCase().includes(search) || d.state.toLowerCase().includes(search))) return false;
+    if(state && d.state !== state) return false;
+    if(region && d.region !== region) return false;
+    if(cluster && d.cluster !== cluster) return false;
+    if(verdict && d.verdict !== verdict) return false;
+    return true;
+  });
+}
+
+let trendChartPrev, trendChartBig, quadrantChart, quadrantChartPrev, clusterChart, clusterChartPrev, rankChartPrev, rankChartBig, detailTrendChart;
+let sortKey = 'ratio', sortAsc = true;
+let currentView = 'summary';
+
+function safe(fn){
+  try { fn(); } catch(e){ console.error(e); }
+}
+
+function renderAll(){
+  const filtered = getFiltered();
+  document.getElementById('resultCount').textContent = `${filtered.length} of ${ids.length} suburbs match current filters`;
+  updateHeaderSubtitle(filtered);
+  safe(()=>renderKPIs(filtered));
+  safe(()=>renderRankPreview(filtered));
+  safe(()=>renderTrendPreview(filtered));
+  safe(()=>renderQuadrantPreview(filtered));
+  safe(()=>renderClusterPreview(filtered));
+  if(currentView === 'ranking') safe(()=>renderRankBig(filtered));
+  if(currentView === 'trend') safe(()=>renderTrendBig(filtered));
+  if(currentView === 'quadrant') safe(()=>renderQuadrantChart(filtered));
+  if(currentView === 'cluster') safe(()=>renderClusterChart(filtered));
+  if(currentView === 'table') safe(()=>renderTable(filtered));
+}
+
+function updateHeaderSubtitle(filtered){
+  const stateCount = new Set(ids.map(i=>data[i].state)).size;
+  document.getElementById('headerSubtitle').textContent =
+    `${filtered.length} of ${ids.length} matched suburbs across ${stateCount} state${stateCount===1?'':'s'} - 2020-2025`;
+}
+
+function hideAllViews(){
+  ['summaryView','detailView','rankingView','trendView','quadrantView','clusterView','ttestView','tableView'].forEach(id => {
+    document.getElementById(id).style.display = 'none';
+  });
+}
+
+function showSection(section){
+  hideAllViews();
+  currentView = section;
+  const viewMap = { ranking:'rankingView', trend:'trendView', quadrant:'quadrantView', cluster:'clusterView', ttest:'ttestView', table:'tableView' };
+  document.getElementById(viewMap[section]).style.display = 'block';
+  const filtered = getFiltered();
+  if(section === 'ranking') safe(()=>renderRankBig(filtered));
+  if(section === 'trend') safe(()=>renderTrendBig(filtered));
+  if(section === 'quadrant') safe(()=>renderQuadrantChart(filtered));
+  if(section === 'cluster') safe(()=>renderClusterChart(filtered));
+  if(section === 'ttest') safe(()=>renderTtest());
+  if(section === 'table') safe(()=>renderTable(filtered));
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+function showSummary(){
+  hideAllViews();
+  currentView = 'summary';
+  document.getElementById('summaryView').style.display = 'block';
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+// Expose to global scope: HTML onclick="..." attributes need these on window,
+// not just inside this IIFE's closure.
+window.showSection = showSection;
+window.showSummary = showSummary;
+
+function renderKPIs(filtered){
+  if(filtered.length===0){
+    document.getElementById('kpis').innerHTML = '<div class="kpi-card">No suburbs match the current filters</div>';
+    return;
+  }
+  const avgGrowth = filtered.reduce((s,id)=>s+(data[id].growth_pa||0),0)/filtered.length;
+  const avgYield = filtered.reduce((s,id)=>s+data[id].yield,0)/filtered.length;
+  const medianPrice = filtered.map(id=>data[id].price).sort((a,b)=>a-b)[Math.floor(filtered.length/2)];
+  const kpis = [
+    {label:'Suburbs in view', value: filtered.length, teal:true},
+    {label:'Avg price growth (p.a.)', value: avgGrowth.toFixed(2)+'%'},
+    {label:'Avg gross yield', value: avgYield.toFixed(2)+'%'},
+    {label:'Median price', value: fmtCurrency(medianPrice)}
+  ];
+  document.getElementById('kpis').innerHTML = kpis.map(k =>
+    `<div class="kpi-card"><div class="kpi-label">${k.label}</div><div class="kpi-value${k.teal?' teal':''}">${k.value}</div></div>`
+  ).join('');
+}
+
+function rankData(filtered){
+  const withGrowth = filtered.filter(id=>data[id].growth_pa!=null);
+  const sorted = withGrowth.slice().sort((a,b)=>data[b].growth_pa-data[a].growth_pa);
+  const top10 = sorted.slice(0,10);
+  const bottom10 = sorted.slice(-10).filter(id=>!top10.includes(id));
+  const shown = top10.concat(bottom10.reverse());
+  const labels = shown.map(displayName);
+  const vals = shown.map(id=>data[id].growth_pa);
+  const colors = shown.map(id=> top10.includes(id) ? '#2dd4a7' : '#f2555a');
+  return { shown, labels, vals, colors };
+}
+
+function renderRankPreview(filtered){
+  const { labels, vals, colors } = rankData(filtered);
+  if(rankChartPrev) rankChartPrev.destroy();
+  rankChartPrev = new Chart(document.getElementById('rankChartPreview'), {
+    type:'bar',
+    data:{ labels: labels, datasets:[{ data: vals, backgroundColor: colors, borderRadius:4, maxBarThickness:10 }]},
+    options:{ indexAxis:'y', responsive:true, maintainAspectRatio:false,
+      plugins:{ legend:{display:false}, tooltip:{ enabled:false } },
+      scales:{ x:{ ticks:{ color:TICK, font:{size:9}, callback:v=>v+'%' }, grid:{color:GRID} },
+                y:{ grid:{display:false}, ticks:{color:TICK, font:{size:8} } } }
+    }
+  });
+}
+
+function renderRankBig(filtered){
+  const { shown, labels, vals, colors } = rankData(filtered);
+  if(rankChartBig) rankChartBig.destroy();
+  rankChartBig = new Chart(document.getElementById('rankChartBig'), {
+    type:'bar',
+    data:{ labels: labels, datasets:[{ data: vals, backgroundColor: colors, borderRadius:5, maxBarThickness:16 }]},
+    options:{ indexAxis:'y', responsive:true, maintainAspectRatio:false,
+      onClick: (evt, elements) => { if(elements.length){ showDetail(shown[elements[0].index]); } },
+      onHover: (evt, elements) => { evt.native.target.style.cursor = elements.length ? 'pointer' : 'default'; },
+      plugins:{ legend:{display:false}, tooltip:{ callbacks:{ label: c => c.parsed.x.toFixed(1)+'% p.a.' } } },
+      scales:{ x:{ title:{display:true,text:'Price growth p.a. (%)', color:TICK, font:{size:11}}, ticks:{ color:TICK, callback:v=>v+'%' }, grid:{color:GRID} },
+                y:{ grid:{display:false}, ticks:{color:TICK, font:{size:10}} } }
+    }
+  });
+}
+
+function trendData(filtered){
+  const rentByQ = quartersFull.map((q,i) => {
+    const vals = filtered.map(id=>data[id].rent ? data[id].rent[i] : null).filter(v=>v!=null);
+    return vals.length ? vals.reduce((a,b)=>a+b,0)/vals.length : null;
+  });
+  return rentByQ;
+}
+
+function eventMarkerPlugin(){
+  return {
+    id: 'eventMarkersPlugin',
+    afterDraw: (chart) => {
+      const xScale = chart.scales.x, yArea = chart.chartArea;
+      Object.keys(eventMarkers).forEach(q => {
+        const idx = quarters.indexOf(q);
+        if(idx<0) return;
+        const ev = eventMarkers[q];
+        const x = xScale.getPixelForValue(idx);
+        const ctx = chart.ctx;
+        ctx.save();
+        ctx.strokeStyle = ev.verified ? 'rgba(255,255,255,0.3)' : 'rgba(242,184,75,0.55)';
+        ctx.setLineDash(ev.verified ? [3,3] : [1,3]);
+        ctx.lineWidth = 1;
+        ctx.beginPath(); ctx.moveTo(x, yArea.top); ctx.lineTo(x, yArea.bottom); ctx.stroke();
+        ctx.restore();
+      });
+    }
+  };
+}
+
+function renderTrendPreview(filtered){
+  const rentByQ = trendData(filtered);
+  if(trendChartPrev) trendChartPrev.destroy();
+  trendChartPrev = new Chart(document.getElementById('trendChartPreview'), {
+    type:'line',
+    data:{ labels: quarters,
+      datasets:[
+        { data: rentByQ, borderColor:'#5b8def', backgroundColor:'rgba(91,141,239,0.08)', yAxisID:'y', tension:0.25, pointRadius:0, borderWidth:2 },
+        { data: cashRate, borderColor:'#f2b84b', backgroundColor:'rgba(242,184,75,0.08)', yAxisID:'y1', tension:0.25, pointRadius:0, borderWidth:2 }
+      ]},
+    options:{ responsive:true, maintainAspectRatio:false,
+      plugins:{ legend:{display:false}, tooltip:{enabled:false} },
+      scales:{
+        y:{ ticks:{color:TICK, font:{size:8}}, grid:{color:GRID} },
+        y1:{ position:'right', ticks:{color:TICK, font:{size:8}}, grid:{display:false} },
+        x:{ grid:{display:false}, ticks:{color:TICK, font:{size:7}, maxRotation:0, autoSkip:true, maxTicksLimit:6} }
+      }
+    },
+    plugins: [eventMarkerPlugin()]
+  });
+}
+
+function renderTrendBig(filtered){
+  const rentByQ = trendData(filtered);
+  if(trendChartBig) trendChartBig.destroy();
+  trendChartBig = new Chart(document.getElementById('trendChartBig'), {
+    type:'line',
+    data:{ labels: quarters,
+      datasets:[
+        { label:'Median rent ($)', data: rentByQ, borderColor:'#5b8def', backgroundColor:'rgba(91,141,239,0.1)', yAxisID:'y', tension:0.25, pointRadius:2 },
+        { label:'Cash rate (%)', data: cashRate, borderColor:'#f2b84b', backgroundColor:'rgba(242,184,75,0.1)', yAxisID:'y1', tension:0.25, pointRadius:2 }
+      ]},
+    options:{ responsive:true, maintainAspectRatio:false,
+      plugins:{ legend:{display:true, labels:{color:TICK, font:{size:11}}} },
+      scales:{
+        y:{ position:'left', title:{display:true,text:'Rent ($/wk)', color:TICK}, ticks:{color:TICK}, grid:{color:GRID} },
+        y1:{ position:'right', title:{display:true,text:'Cash rate (%)', color:TICK}, ticks:{color:TICK}, grid:{display:false} },
+        x:{ grid:{display:false}, ticks:{color:TICK, font:{size:9}} }
+      }
+    },
+    plugins: [eventMarkerPlugin()]
+  });
+}
+
+
+function quadrantDatasets(filtered){
+  const points = filtered.filter(id=>data[id].growth_pa!=null).map(id => ({
+    x: data[id].growth_pa, y: data[id].yield, id: id, label: displayName(id), color: verdictColorMap[data[id].verdict]
+  }));
+  const byVerdict = {Buy:[], Neutral:[], Rent:[]};
+  points.forEach(p => {
+    const key = Object.keys(verdictColorMap).find(k=>verdictColorMap[k]===p.color);
+    if(byVerdict[key]) byVerdict[key].push(p);
+  });
+  return Object.keys(byVerdict).map(function(verdict){
+    return { label: verdict, data: byVerdict[verdict], backgroundColor: verdictColorMap[verdict], pointRadius:4 };
+  });
+}
+
+function renderQuadrantPreview(filtered){
+  if(quadrantChartPrev) quadrantChartPrev.destroy();
+  quadrantChartPrev = new Chart(document.getElementById('quadrantChartPreview'), {
+    type:'scatter',
+    data:{ datasets: quadrantDatasets(filtered).map(d=>Object.assign({}, d, {pointRadius:2})) },
+    options:{ responsive:true, maintainAspectRatio:false,
+      plugins:{ legend:{display:false}, tooltip:{enabled:false} },
+      scales:{
+        x:{ ticks:{color:TICK, font:{size:8}}, grid:{color:GRID} },
+        y:{ ticks:{color:TICK, font:{size:8}}, grid:{color:GRID} }
+      }
+    }
+  });
+}
+
+function renderQuadrantChart(filtered){
+  if(quadrantChart) quadrantChart.destroy();
+  quadrantChart = new Chart(document.getElementById('quadrantChartBig'), {
+    type:'scatter',
+    data:{ datasets: quadrantDatasets(filtered) },
+    options:{ responsive:true, maintainAspectRatio:false,
+      onClick: (evt, elements) => { if(elements.length){ const ds=elements[0].datasetIndex, idx=elements[0].index; showDetail(quadrantChart.data.datasets[ds].data[idx].id); } },
+      onHover: (evt, elements) => { evt.native.target.style.cursor = elements.length ? 'pointer' : 'default'; },
+      plugins:{ legend:{display:true, labels:{color:TICK, font:{size:11}}},
+        tooltip:{ callbacks:{ label: c => `${c.raw.label}: ${c.raw.x.toFixed(1)}% growth, ${c.raw.y.toFixed(2)}% yield` } } },
+      scales:{
+        x:{ title:{display:true,text:'Price growth p.a. (%)', color:TICK, font:{size:11}}, ticks:{color:TICK}, grid:{color:GRID} },
+        y:{ title:{display:true,text:'Gross yield (%)', color:TICK, font:{size:11}}, ticks:{color:TICK}, grid:{color:GRID} }
+      }
+    }
+  });
+}
+
+function clusterCounts(filtered){
+  const counts = {};
+  filtered.forEach(id => { counts[data[id].cluster] = (counts[data[id].cluster]||0)+1; });
+  return counts;
+}
+
+function renderClusterPreview(filtered){
+  const counts = clusterCounts(filtered);
+  if(clusterChartPrev) clusterChartPrev.destroy();
+  clusterChartPrev = new Chart(document.getElementById('clusterChartPreview'), {
+    type:'bar',
+    data:{ labels: Object.keys(counts), datasets:[{ data: Object.keys(counts).map(function(k){return counts[k];}), backgroundColor:'#5b8def', borderRadius:4 }]},
+    options:{ responsive:true, maintainAspectRatio:false,
+      plugins:{ legend:{display:false} },
+      scales:{ y:{ beginAtZero:true, ticks:{stepSize:1, color:TICK, font:{size:9}}, grid:{color:GRID} },
+               x:{ ticks:{color:TICK, font:{size:8}}, grid:{display:false} } }
+    }
+  });
+}
+
+function renderClusterChart(filtered){
+  const counts = clusterCounts(filtered);
+  if(clusterChart) clusterChart.destroy();
+  clusterChart = new Chart(document.getElementById('clusterChartBig'), {
+    type:'bar',
+    data:{ labels: Object.keys(counts), datasets:[{ data: Object.keys(counts).map(function(k){return counts[k];}), backgroundColor:'#5b8def', borderRadius:5 }]},
+    options:{ responsive:true, maintainAspectRatio:false,
+      plugins:{ legend:{display:false} },
+      scales:{ y:{ beginAtZero:true, ticks:{stepSize:1, color:TICK, font:{size:10}}, grid:{color:GRID} },
+               x:{ ticks:{color:TICK, font:{size:9}}, grid:{display:false} } }
+    }
+  });
+}
+
+function renderTable(filtered){
+  const rows = filtered.map(id => ({
+    id, name: displayName(id), state: data[id].state, region: data[id].region, price: data[id].price,
+    rentLatest: data[id].rent ? [...data[id].rent].reverse().find(v=>v!=null) : null, growth_pa: data[id].growth_pa,
+    yield: data[id].yield, ratio: data[id].ratio, cv: data[id].cv, cluster: data[id].cluster, verdict: data[id].verdict
+  }));
+  rows.sort((a,b) => {
+    let av=a[sortKey], bv=b[sortKey];
+    if(typeof av === 'string') { av=av||''; bv=bv||''; return sortAsc ? av.localeCompare(bv) : bv.localeCompare(av); }
+    av = av==null?-Infinity:av; bv = bv==null?-Infinity:bv;
+    return sortAsc ? av-bv : bv-av;
+  });
+  const verdictClass = v => v==='Buy'?'verdict-buy':(v==='Neutral'?'verdict-neutral':'verdict-rent');
+  document.getElementById('suburbTableBodyBig').innerHTML = rows.map(r => `
+    <tr>
+      <td><a href="#" class="suburb-link" data-suburb="${r.id}">${r.name}</a></td><td><span class="state-pill">${r.state}</span></td><td>${r.region}</td><td>${fmtCurrency(r.price)}</td>
+      <td>${fmtCurrency(r.rentLatest)}</td><td>${r.growth_pa!=null? r.growth_pa.toFixed(1)+'%':'-'}</td>
+      <td>${r.yield.toFixed(2)}%</td><td>${r.cv!=null? r.cv.toFixed(1)+'%':'-'}</td>
+      <td>${r.cluster}</td><td><span class="verdict-pill ${verdictClass(r.verdict)}">${r.verdict}</span></td>
+    </tr>`).join('');
+  Array.prototype.forEach.call(document.querySelectorAll('.suburb-link'), function(el) {
+    el.addEventListener('click', (e) => { e.preventDefault(); showDetail(el.getAttribute('data-suburb')); });
+  });
+}
+
+Array.prototype.forEach.call(document.querySelectorAll('thead th[data-key]'), function(th) {
+  th.addEventListener('click', () => {
+    const key = th.getAttribute('data-key');
+    if(sortKey===key) sortAsc = !sortAsc; else { sortKey=key; sortAsc=true; }
+    renderTable(getFiltered());
+  });
+});
+
+function showDetail(id){
+  const d = data[id];
+  if(!d) return;
+  hideAllViews();
+  currentView = 'detail';
+  document.getElementById('detailView').style.display = 'block';
+  document.getElementById('detailTitle').textContent = `${d.name} (${d.region}, ${d.state})`;
+
+  const kpis = [
+    {label:'Median price', value: fmtCurrency(d.price)},
+    {label:'Cluster', value: d.cluster},
+    {label:'Recommendation', value: d.verdict, teal: d.verdict==='Buy'}
+  ];
+  document.getElementById('detailKpis').innerHTML = kpis.map(k =>
+    `<div class="kpi-card"><div class="kpi-label">${k.label}</div><div class="kpi-value${k.teal?' teal':''}">${k.value}</div></div>`
+  ).join('');
+
+  safe(() => {
+    if(detailTrendChart) detailTrendChart.destroy();
+    detailTrendChart = new Chart(document.getElementById('detailTrendChart'), {
+      type:'line',
+      data:{ labels: quarters,
+        datasets:[
+          { label:'Weekly rent ($)', data: d.rent, borderColor:'#5b8def', backgroundColor:'rgba(91,141,239,0.1)', yAxisID:'y', tension:0.25, pointRadius:2, spanGaps:true },
+          { label:'Cash rate (%)', data: cashRate, borderColor:'#f2b84b', backgroundColor:'rgba(242,184,75,0.1)', yAxisID:'y1', tension:0.25, pointRadius:2 }
+        ]},
+      options:{ responsive:true, maintainAspectRatio:false,
+        plugins:{ legend:{display:true, labels:{color:TICK, font:{size:11}}} },
+        scales:{
+          y:{ position:'left', title:{display:true,text:'Rent ($/wk)', color:TICK}, ticks:{color:TICK}, grid:{color:GRID} },
+          y1:{ position:'right', title:{display:true,text:'Cash rate (%)', color:TICK}, ticks:{color:TICK}, grid:{display:false} },
+          x:{ grid:{display:false}, ticks:{color:TICK, font:{size:9}} }
+        }
+      },
+      plugins: [eventMarkerPlugin()]
+    });
+  });
+
+  const allWithGrowth = ids.filter(i=>data[i].growth_pa!=null).sort((a,b)=>data[b].growth_pa-data[a].growth_pa);
+  const growthRank = allWithGrowth.indexOf(id)+1;
+  const ratioRank = ids.slice().sort((a,b)=>data[a].ratio-data[b].ratio).indexOf(id)+1;
+  document.getElementById('detailVerdictText').textContent =
+    `${d.name} sits in the "${d.cluster}" cluster, ranked ${growthRank} of ${allWithGrowth.length} suburbs by price growth p.a. and ${ratioRank} of ${ids.length} by price-to-rent ratio (lower ratio = stronger case to buy). `+
+    (d.verdict === 'Rent' ? 'This favours renting: buying would take a long time to pay off relative to renting the same property.' :
+     d.verdict === 'Neutral' ? 'This sits in neutral territory: buy vs rent is close either way.' :
+     'This favours buying: the price is low relative to achievable rent.');
+
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+function renderTtest(){
+  const tbody = document.getElementById('ttestBodyBig');
+  tbody.innerHTML = Object.keys(ttest3).map(function(name){
+    const r = ttest3[name];
+    let sig, sigClass = '';
+    if(!r.verified){ sig = 'Placeholder - pending'; sigClass='pending'; }
+    else if(r.p_value < 0.001){ sig = 'Highly significant'; }
+    else if(r.p_value < 0.05){ sig = 'Significant'; }
+    else { sig = 'Not significant'; sigClass='no'; }
+    const pStr = r.p_value < 0.0001 ? '&lt;0.0001' : r.p_value.toFixed(4);
+    const rowClass = r.verified ? '' : 'row-pending';
+    const noteHtml = r.verified ? `<div style="font-size:10.5px; color:var(--ink-faint); margin-top:2px;">${r.note}</div>` : '';
+    return `<tr class="${rowClass}">
+      <td>${name}${noteHtml}</td>
+      <td style="color:${r.mean_diff<0?'var(--red)':'var(--ink)'};">${r.mean_diff<0?'-':'+'}$${Math.abs(r.mean_diff).toFixed(2)}/wk</td>
+      <td>${r.t_stat.toFixed(2)}</td>
+      <td>${pStr}</td>
+      <td><span class="sig-badge ${sigClass}">${sig}</span></td>
+    </tr>`;
+  }).join('');
+}
+
+/* ---------- CSV upload: add a state's dataset by drag-and-drop ---------- */
+
+function parseCSV(text){
+  const lines = text.replace(/\r\n/g,'\n').replace(/\r/g,'\n').split('\n').filter(l=>l.length>0);
+  if(!lines.length) return { header: [], rows: [] };
+  const splitLine = (line) => {
+    const out = []; let cur=''; let inQuotes=false;
+    for(let i=0;i<line.length;i++){
+      const c = line[i];
+      if(inQuotes){
+        if(c === '"'){ if(line[i+1] === '"'){ cur+='"'; i++; } else { inQuotes=false; } }
+        else cur += c;
+      } else {
+        if(c === '"') inQuotes = true;
+        else if(c === ','){ out.push(cur); cur=''; }
+        else cur += c;
+      }
+    }
+    out.push(cur);
+    return out.map(s=>s.trim());
+  };
+  const header = splitLine(lines[0]);
+  const rows = [];
+  for(let i=1;i<lines.length;i++){
+    const vals = splitLine(lines[i]);
+    if(vals.length === 1 && vals[0] === '') continue;
+    const row = {};
+    header.forEach((h,idx)=> row[h] = vals[idx] !== undefined ? vals[idx] : '');
+    rows.push(row);
+  }
+  return { header, rows };
+}
+
+function classifyCSV(header){
+  const has = k => header.includes(k);
+  if(has('Price2024') || has('GrossYieldPct') || has('PriceToRentRatio') || has('Verdict')) return 'master';
+  if(has('WeeklyRent') && has('Quarter')) return 'rent';
+  return 'unknown';
+}
+
+function readFileText(file){
+  return new Promise((resolve, reject) => {
+    const r = new FileReader();
+    r.onload = () => resolve(r.result);
+    r.onerror = () => reject(r.error);
+    r.readAsText(file);
+  });
+}
+
+function setUploadStatus(msg, kind){
+  const el = document.getElementById('uploadStatus');
+  el.textContent = msg;
+  el.className = 'upload-status' + (kind ? ' '+kind : '');
+}
+
+function renderUploadedChips(){
+  const counts = {};
+  ids.forEach(id => { const s = data[id].state; if(s !== BASE_STATE) counts[s] = (counts[s]||0)+1; });
+  const el = document.getElementById('uploadedChips');
+  const stateNames = Object.keys(counts);
+  if(!stateNames.length){ el.innerHTML = ''; return; }
+  el.innerHTML = stateNames.map(s =>
+    `<div class="uploaded-chip"><span>${s} - ${counts[s]} suburb${counts[s]===1?'':'s'}</span><button type="button" data-state="${s}" title="Remove this dataset">&times;</button></div>`
+  ).join('');
+  Array.prototype.forEach.call(el.querySelectorAll('button[data-state]'), btn => {
+    btn.addEventListener('click', () => {
+      const s = btn.getAttribute('data-state');
+      Object.keys(data).forEach(id => { if(data[id].state === s) delete data[id]; });
+      refreshUniverse();
+      renderAll();
+      if(currentView !== 'summary') showSection(currentView);
+      renderUploadedChips();
+      setUploadStatus(`Removed "${s}" dataset.`, 'ok');
+    });
+  });
+}
+
+function mergeStateData(masterRows, rentRows, sourceName, priorErrors){
+  const stateInput = document.getElementById('stateNameInput').value.trim();
+  const fallbackName = sourceName.replace(/\.csv$/i,'').replace(/suburbs?[_-]?master/i,'').replace(/[_-]+/g,' ').trim();
+  const rowsByState = {};
+  masterRows.forEach(row => {
+    const suburb = (row.Suburb||'').trim();
+    if(!suburb) return;
+    const state = (row.State && row.State.trim()) || stateInput || fallbackName || 'Unnamed State';
+    if(!rowsByState[state]) rowsByState[state] = [];
+    rowsByState[state].push(row);
+  });
+
+  if(!Object.keys(rowsByState).length){
+    setUploadStatus('No valid rows found - check that the Suburb column is populated.', 'err');
+    return;
+  }
+
+  let addedTotal = 0, skipped = 0;
+  const touchedStates = [];
+
+  Object.keys(rowsByState).forEach(state => {
+    const rows = rowsByState[state];
+    const parsed = rows.map(row => {
+      const suburb = (row.Suburb||'').trim();
+      const region = (row.Region||'Unspecified').trim();
+      const price = numOrNull(row.Price2024);
+      const rentLatest = numOrNull(row.WeeklyRentJun25);
+      let yieldPct = numOrNull(row.GrossYieldPct);
+      let ratio = numOrNull(row.PriceToRentRatio);
+      if(yieldPct == null && price && rentLatest) yieldPct = (rentLatest*52/price)*100;
+      if(ratio == null && price && rentLatest) ratio = price/(rentLatest*52);
+      const growth_pa = numOrNull(row.GrowthPAPct);
+      const growth_10yr = numOrNull(row.Growth10YrPct);
+      const cv = numOrNull(row.RentVolatilityCVPct);
+      const verdict = (row.Verdict||'').trim();
+      const cluster = (row.Cluster||'').trim();
+      return { suburb, region, price, rentLatest, yield: yieldPct, ratio, growth_pa, growth_10yr, cv, verdict, cluster };
+    }).filter(r => r.suburb && r.price != null && r.yield != null && r.ratio != null);
+
+    skipped += rows.length - parsed.length;
+    if(!parsed.length) return;
+
+    // Same modelling logic as the Victorian dataset: verdict by price-to-rent-ratio
+    // percentile ranking (bottom third Buy, middle Neutral, top third Rent) where
+    // Verdict wasn't supplied directly.
+    const needVerdict = parsed.filter(r=>!r.verdict);
+    if(needVerdict.length){
+      const rankedByRatio = parsed.slice().sort((a,b)=>a.ratio-b.ratio);
+      rankedByRatio.forEach((r,i) => {
+        if(r.verdict) return;
+        const pct = i/((rankedByRatio.length-1)||1);
+        r.verdict = pct < 0.34 ? 'Buy' : (pct < 0.67 ? 'Neutral' : 'Rent');
+      });
+    }
+    // Approximate cluster (price/yield quadrant rule) where a real k-means Cluster
+    // column wasn't supplied - not a substitute for the full pipeline in the guide.
+    const needCluster = parsed.filter(r=>!r.cluster);
+    if(needCluster.length){
+      const prices = parsed.map(r=>r.price).sort((a,b)=>a-b);
+      const medPrice = prices[Math.floor(prices.length/2)];
+      const yields = parsed.map(r=>r.yield).sort((a,b)=>a-b);
+      const medYield = yields[Math.floor(yields.length/2)];
+      needCluster.forEach(r => {
+        if(r.price >= medPrice && r.yield <= medYield*0.7) r.cluster = 'Expensive & Stable';
+        else if(r.price < medPrice && r.yield >= medYield) r.cluster = 'Affordable & High-Yield';
+        else if(r.price >= medPrice && (r.growth_pa||0) >= 6) r.cluster = 'Premium & Growing';
+        else r.cluster = 'Mid-Range Balanced';
+      });
+    }
+
+    parsed.forEach(r => {
+      const id = `${state}::${r.suburb}`;
+      data[id] = {
+        name: r.suburb, state, region: r.region, price: r.price, yield: r.yield, ratio: r.ratio,
+        verdict: r.verdict, growth_pa: r.growth_pa, growth_10yr: r.growth_10yr, cv: r.cv, cluster: r.cluster,
+        rent: new Array(quarters.length).fill(null)
+      };
+      addedTotal++;
+    });
+    touchedStates.push(state);
+  });
+
+  rentRows.forEach(row => {
+    const suburb = (row.Suburb||'').trim();
+    const quarter = (row.Quarter||'').trim();
+    const val = numOrNull(row.WeeklyRent);
+    if(!suburb || !quarter || val==null) return;
+    let qIdx = quartersFull.indexOf(quarter);
+    if(qIdx < 0) qIdx = quarters.indexOf(quarter);
+    if(qIdx < 0) return;
+    touchedStates.forEach(state => {
+      const id = `${state}::${suburb}`;
+      if(data[id]) data[id].rent[qIdx] = val;
+    });
+  });
+
+  refreshUniverse();
+  renderAll();
+  if(currentView !== 'summary') showSection(currentView);
+  renderUploadedChips();
+
+  const msgParts = [];
+  if(addedTotal) msgParts.push(`Added ${addedTotal} suburb${addedTotal===1?'':'s'} across ${touchedStates.length} state${touchedStates.length===1?'':'s'} (${touchedStates.join(', ')}).`);
+  if(skipped) msgParts.push(`Skipped ${skipped} row(s) missing Suburb/Price/Rent data.`);
+  if(priorErrors && priorErrors.length) msgParts.push(priorErrors.join(' '));
+  setUploadStatus(msgParts.join(' ') || 'Nothing was added - check the file has Suburb, Price2024 and WeeklyRentJun25 columns.', addedTotal ? 'ok' : 'err');
+}
+
+async function handleFiles(fileList){
+  const files = Array.from(fileList).filter(f=>/\.csv$/i.test(f.name));
+  if(!files.length){ setUploadStatus('Drop CSV files only.', 'err'); return; }
+
+  let masterRows = null, masterFileName = '';
+  let rentRows = [];
+  const errors = [];
+
+  for(const file of files){
+    try {
+      const text = await readFileText(file);
+      const { header, rows } = parseCSV(text);
+      const kind = classifyCSV(header);
+      if(kind === 'master'){
+        if(masterRows){ errors.push(`Ignored extra summary file "${file.name}" - only one is used per drop.`); continue; }
+        masterRows = rows; masterFileName = file.name;
+      } else if(kind === 'rent'){
+        rentRows = rentRows.concat(rows);
+      } else {
+        errors.push(`Could not recognise "${file.name}" - expected Suburb/Price columns or Suburb/Quarter/WeeklyRent columns.`);
+      }
+    } catch(e){
+      errors.push(`Failed to read "${file.name}".`);
+    }
+  }
+
+  if(!masterRows){
+    setUploadStatus('Drop at least one suburb-summary CSV (Suburb, Region, Price2024, WeeklyRentJun25).' + (errors.length ? ' '+errors.join(' ') : ''), 'err');
+    return;
+  }
+  mergeStateData(masterRows, rentRows, masterFileName, errors);
+}
+
+const dropZone = document.getElementById('dropZone');
+const fileInput = document.getElementById('fileInput');
+dropZone.addEventListener('click', () => fileInput.click());
+fileInput.addEventListener('change', (e) => { handleFiles(e.target.files); fileInput.value = ''; });
+['dragenter','dragover'].forEach(evt => dropZone.addEventListener(evt, e => { e.preventDefault(); dropZone.classList.add('dragover'); }));
+['dragleave'].forEach(evt => dropZone.addEventListener(evt, e => { e.preventDefault(); dropZone.classList.remove('dragover'); }));
+dropZone.addEventListener('drop', e => {
+  e.preventDefault();
+  dropZone.classList.remove('dragover');
+  if(e.dataTransfer.files.length) handleFiles(e.dataTransfer.files);
+});
+
+['searchBox'].forEach(id => document.getElementById(id).addEventListener('input', renderAll));
+['stateFilter','regionFilter','clusterFilter','verdictFilter'].forEach(id => document.getElementById(id).addEventListener('change', renderAll));
+
+refreshUniverse();
+renderAll();
+renderTtest();
+renderUploadedChips();
+})();
+</script>
+</body>
+</html>

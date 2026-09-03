@@ -1,0 +1,76 @@
+Suburb,Region,Price2024,WeeklyRentJun25,GrossYieldPct,PriceToRentRatio,GrowthPAPct,Growth10YrPct,RentVolatilityCVPct,Verdict,Cluster
+Altona,Outer Western Melbourne,1170000,550,2.44,40.9,6.1,81,13.34,Neutral,Mid-Range Balanced
+Armadale,Inner Melbourne,2380000,620,1.35,73.8,3.1,36,12.79,Rent,Expensive & Stable
+Bairnsdale,Other Regional Centres,430000,460,5.56,18.0,5.8,76,13.56,Buy,Affordable & High-Yield
+Balwyn,Inner Eastern Melbourne,2868000,720,1.31,76.6,4.9,61,11.52,Rent,Expensive & Stable
+Bayswater,Outer Eastern Melbourne,862000,550,3.32,30.1,5.1,64,12.57,Neutral,Mid-Range Balanced
+Benalla,Other Regional Centres,440000,443,5.24,19.1,6.4,87,12.07,Buy,Affordable & High-Yield
+Bendigo,Bendigo,620000,460,3.86,25.9,5.1,65,10.7,Buy,Mid-Range Balanced
+Bentleigh,Southern Melbourne,1641500,680,2.15,46.4,4.6,56,12.84,Rent,Mid-Range Balanced
+Berwick,South Eastern Melbourne,870000,600,3.59,27.9,6,79,14.69,Neutral,Affordable & High-Yield
+Blackburn,Inner Eastern Melbourne,1517000,600,2.06,48.6,5,62,13.36,Rent,Mid-Range Balanced
+Boronia,Outer Eastern Melbourne,849500,560,3.43,29.2,5.4,70,12.86,Neutral,Mid-Range Balanced
+Box Hill,Inner Eastern Melbourne,1705000,600,1.83,54.6,4.8,60,15.58,Rent,Mid-Range Balanced
+Brighton,Southern Melbourne,3405500,800,1.22,81.9,5.8,76,6.61,Rent,Premium & Growing
+Brighton East,Southern Melbourne,2200000,800,1.89,52.9,5.4,69,6.47,Rent,Mid-Range Balanced
+Brunswick,North Western Melbourne,1300000,600,2.4,41.7,4.8,60,12.47,Neutral,Mid-Range Balanced
+Carlton North,Inner Melbourne,1515000,750,2.57,38.8,3.3,38,8.38,Neutral,Expensive & Stable
+Carnegie,Southern Melbourne,1715000,560,1.7,58.9,5.5,70,13.06,Rent,Mid-Range Balanced
+Castlemaine,Other Regional Centres,747000,470,3.27,30.6,7.3,102,10.18,Neutral,Affordable & High-Yield
+Caulfield,Southern Melbourne,2335000,650,1.45,69.1,5.9,77,17.27,Rent,Mid-Range Balanced
+Cheltenham,Southern Melbourne,1332500,620,2.42,41.3,5.6,72,10.82,Neutral,Mid-Range Balanced
+Clayton,Inner Eastern Melbourne,1165000,600,2.68,37.3,4.5,55,15.66,Neutral,Mid-Range Balanced
+Corio,Geelong,488000,400,4.26,23.5,7.3,102,10.2,Buy,Affordable & High-Yield
+Craigieburn,North Western Melbourne,660000,522,4.11,24.3,6.2,82,11.46,Buy,Affordable & High-Yield
+Cranbourne,South Eastern Melbourne,660000,580,4.57,21.9,7.1,99,14.75,Buy,Affordable & High-Yield
+Dandenong,South Eastern Melbourne,720500,520,3.75,26.6,5.1,64,16.16,Neutral,Mid-Range Balanced
+East Melbourne,Inner Melbourne,3650000,630,0.9,111.4,7,97,11.65,Rent,Premium & Growing
+Echuca,Other Regional Centres,560000,450,4.18,23.9,7,96,10.49,Buy,Affordable & High-Yield
+Elsternwick,Southern Melbourne,1953000,598,1.59,62.8,4,49,12.24,Rent,Expensive & Stable
+Elwood,Inner Melbourne,2075000,575,1.44,69.4,3.9,47,12.78,Rent,Expensive & Stable
+Essendon,North Western Melbourne,1741500,550,1.64,60.9,6.3,85,12.34,Rent,Mid-Range Balanced
+Ferntree Gully,Outer Eastern Melbourne,888500,590,3.45,29.0,5.8,76,12.88,Neutral,Mid-Range Balanced
+Fitzroy,Inner Melbourne,1750000,700,2.08,48.1,4.5,55,9.27,Rent,Mid-Range Balanced
+Footscray,Outer Western Melbourne,960000,520,2.82,35.5,4.1,49,13.95,Neutral,Mid-Range Balanced
+Frankston,Mornington Peninsula,740000,540,3.79,26.4,7.1,99,12.82,Buy,Affordable & High-Yield
+Hamilton,Other Regional Centres,380000,350,4.79,20.9,6.6,90,9.55,Buy,Affordable & High-Yield
+Hawthorn,Inner Eastern Melbourne,2900000,530,0.95,105.2,6.1,81,13.37,Rent,Premium & Growing
+Horsham,Other Regional Centres,382500,380,5.17,19.4,5.9,78,10.8,Buy,Affordable & High-Yield
+Keilor,North Western Melbourne,1110000,630,2.95,33.9,5.8,75,16.28,Neutral,Mid-Range Balanced
+Kew,Inner Eastern Melbourne,2805000,680,1.26,79.3,3.7,44,13.56,Rent,Expensive & Stable
+Lara,Geelong,678000,550,4.22,23.7,7.1,99,10.94,Buy,Affordable & High-Yield
+Malvern,Southern Melbourne,3306000,635,1.0,100.1,5.4,70,12.35,Rent,Premium & Growing
+Malvern East,Southern Melbourne,2057500,610,1.54,64.9,4.1,49,14.4,Rent,Expensive & Stable
+Melton,Outer Western Melbourne,471000,450,4.97,20.1,7,96,10.53,Buy,Affordable & High-Yield
+Mildura,Other Regional Centres,460000,450,5.09,19.7,6.5,88,11.78,Buy,Affordable & High-Yield
+Morwell,Other Regional Centres,335000,380,5.9,17.0,8.4,123,16.62,Buy,Affordable & High-Yield
+Mount Waverley,Inner Eastern Melbourne,1615000,670,2.16,46.4,5.4,70,11.95,Rent,Mid-Range Balanced
+Noble Park,South Eastern Melbourne,778500,515,3.44,29.1,5.9,77,13.72,Neutral,Affordable & High-Yield
+North Bendigo,Bendigo,497500,470,4.91,20.4,5.9,78,12.98,Buy,Affordable & High-Yield
+North Geelong,Geelong,640000,480,3.9,25.6,7.8,113,10.22,Buy,Affordable & High-Yield
+Northcote,North Eastern Melbourne,1600000,640,2.08,48.1,5.6,72,10.29,Rent,Mid-Range Balanced
+Pakenham,South Eastern Melbourne,655000,540,4.29,23.3,6.5,87,15.07,Buy,Affordable & High-Yield
+Port Melbourne,Inner Melbourne,1600000,770,2.5,40.0,5.7,74,8.93,Neutral,Mid-Range Balanced
+Portland,Other Regional Centres,415000,410,5.14,19.5,7,98,10.55,Buy,Affordable & High-Yield
+Preston,North Eastern Melbourne,1185000,550,2.41,41.4,5.6,72,10.99,Neutral,Mid-Range Balanced
+Reservoir,North Eastern Melbourne,905000,525,3.02,33.2,5.3,67,12.1,Neutral,Mid-Range Balanced
+Ringwood,Outer Eastern Melbourne,1025000,555,2.82,35.5,4.5,55,11.66,Neutral,Mid-Range Balanced
+Rowville,Outer Eastern Melbourne,1055000,650,3.2,31.2,5.5,71,12.81,Neutral,Mid-Range Balanced
+Seymour,Other Regional Centres,445000,400,4.67,21.4,7.6,109,11.42,Buy,Affordable & High-Yield
+Shepparton,Other Regional Centres,465000,450,5.03,19.9,6.7,92,14.43,Buy,Affordable & High-Yield
+South Melbourne,Inner Melbourne,1532500,650,2.21,45.3,2.5,28,14.29,Neutral,Expensive & Stable
+South Yarra,Inner Melbourne,2260000,600,1.38,72.4,4.5,56,14.98,Rent,Expensive & Stable
+Springvale,South Eastern Melbourne,850000,550,3.36,29.7,4.8,60,14.0,Neutral,Mid-Range Balanced
+St Kilda,Inner Melbourne,1515000,560,1.92,52.0,2.1,24,14.43,Rent,Expensive & Stable
+Sunbury,North Western Melbourne,665000,520,4.07,24.6,6.3,85,11.18,Buy,Affordable & High-Yield
+Sunshine,Outer Western Melbourne,820000,485,3.08,32.5,5.4,70,11.7,Neutral,Mid-Range Balanced
+Swan Hill,Other Regional Centres,472500,400,4.4,22.7,7.5,105,12.5,Buy,Affordable & High-Yield
+Sydenham,Outer Western Melbourne,704000,500,3.69,27.1,5.4,70,8.94,Neutral,Mid-Range Balanced
+Thornbury,North Eastern Melbourne,1430000,525,1.91,52.4,5.5,70,11.05,Rent,Mid-Range Balanced
+Toorak,Inner Melbourne,6060000,650,0.56,179.3,6,79,10.85,Rent,Premium & Growing
+Torquay,Other Regional Centres,1200000,660,2.86,35.0,7.5,107,9.21,Neutral,Affordable & High-Yield
+Traralgon,Other Regional Centres,507000,440,4.51,22.2,6.3,84,11.61,Buy,Affordable & High-Yield
+West Footscray,Outer Western Melbourne,927500,550,3.08,32.4,3.8,45,12.21,Neutral,Mid-Range Balanced
+Whittlesea,North Eastern Melbourne,700000,540,4.01,24.9,6.4,87,12.84,Buy,Affordable & High-Yield
+Williamstown,Outer Western Melbourne,1597500,650,2.12,47.3,5.1,65,9.36,Rent,Mid-Range Balanced
+Wodonga,Other Regional Centres,540000,480,4.62,21.6,6.2,83,12.39,Buy,Affordable & High-Yield

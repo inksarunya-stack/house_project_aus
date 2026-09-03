@@ -1,0 +1,7 @@
+Event,AnnounceDate,EventQuarter,MeanRentDiff,TStat,PValue,N,Significance
+COVID-19 Emergency Rate Cut,Nov 2020,Dec 2020,-7.36,-2.477,0.01551721015586127,75,Significant
+RBA Rate Hike Cycle Start,May 2022,Jun 2022,27.25,20.884,9.472195353653302e-33,75,Highly significant
+Rapid Tightening Peak,Sep 2022,Sep 2022,34.15,22.54,7.120465357931066e-35,75,Highly significant
+International Student Cap Announcement,Aug 2024,Sep 2024,40.16,19.042,3.044776764511029e-30,75,Highly significant
+Foreign Buyer Ban,Apr 2025,Jun 2025,16.41,8.816,3.704290717200354e-13,75,Highly significant
+RBA Easing Cycle Start,Feb 2025,Mar 2025,22.68,12.832,1.6881642768740322e-20,75,Highly significant

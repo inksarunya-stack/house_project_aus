@@ -1,0 +1,4 @@
+Suburb,Region,Price2024,WeeklyRentJun25,GrossYieldPct,PriceToRentRatio,GrowthPAPct,Growth10YrPct,RentVolatilityCVPct,Verdict,Cluster
+Sample Springs,Example Region,520000,480,4.8,20.8,6.9,95,11.2,Buy,Affordable & High-Yield
+Placeholder Heights,Example Region,1450000,520,1.87,53.5,4.2,52,13.0,Rent,Mid-Range Balanced
+Demo Bay,Example Coast,780000,430,2.87,34.9,5.5,68,9.8,Neutral,Mid-Range Balanced
